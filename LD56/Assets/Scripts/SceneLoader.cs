@@ -17,9 +17,14 @@ public class SceneLoader : MonoBehaviour
         LoadScene("Cutscene_Opening");
     }
 
-    public static void LoadGameplay()
+    public static void LoadGameplayDay()
     {
-        LoadScene("Gameplay");
+        LoadScene("Gameplay_Day");
+    }
+
+    public static void LoadGameplayNight()
+    {
+        LoadScene("Gameplay_Night");
     }
 
     public static void QuitApplication()
