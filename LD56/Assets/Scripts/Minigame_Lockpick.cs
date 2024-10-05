@@ -8,10 +8,18 @@ public class Minigame_Lockpick : MonoBehaviour
 {
 
     private KeyCode submitButton = KeyCode.Return;
+
     [SerializeField] private TMP_InputField guessInput;
     [SerializeField] private TMP_Text guessMarker;
     [SerializeField] private MinigameManager manager;
-    private string guessWord = "KENNEL";
+
+    private string[] words = { "BOWLS", "FETCH", "TREAT", "LEASH", "SNACK" };
+    private string guessWord;
+
+    private void Awake()
+    {
+        guessWord = words[Random.Range(0, words.Length)];   // Choosing random word from list
+    }
 
     // Update is called once per frame
     void Update()
@@ -44,7 +52,7 @@ public class Minigame_Lockpick : MonoBehaviour
     private void SubmitWord(string guess)
     {
         guessMarker.text = "";
-        string answerCopy = guessWord;
+        string answerCopy = "" + guessWord;
 
         guess = guess.ToUpper();    // Convert to upper case for no case errors when checking
 
@@ -60,7 +68,9 @@ public class Minigame_Lockpick : MonoBehaviour
                 // Check which letters are guessed correctly and remove them from copy string
                 if (guess.ElementAt(i) == guessWord.ElementAt(i))
                 {
-                    answerCopy.Remove(i);
+                    // Find position of letter and remove it from the string to know which letters are guessed
+                    int letterPosition = answerCopy.IndexOf(guess.ElementAt(i));
+                    answerCopy = answerCopy.Substring(0, letterPosition) + answerCopy.Substring(letterPosition + 1);
                 }
             }
 
@@ -76,9 +86,14 @@ public class Minigame_Lockpick : MonoBehaviour
                 else
                 {
                     // If not right place, check if it is one of the remaining letters but in wrong position
-                    if (answerCopy.Contains(guess.ElementAt(i))) {
+                    Debug.Log(answerCopy);
+                    if (answerCopy.Contains(guess.ElementAt(i))) 
+                    {
                         guessMarker.text += "?";
-                        answerCopy.Replace(guess.ElementAt(i), ' ');    // Remove from copy tring to avoid repetitions
+
+                        // Removing from copy to avoid repetitions
+                        int letterPosition = answerCopy.IndexOf(guess.ElementAt(i));
+                        answerCopy = answerCopy.Substring(0, letterPosition) + answerCopy.Substring(letterPosition + 1);
                     }
 
                     // If wrong letter
@@ -96,11 +111,16 @@ public class Minigame_Lockpick : MonoBehaviour
     {
         // TODO: Check why events not triggering
         EventManager.TriggerEvent("LoseMinigameAttempt");
+
+        manager.LoseLife(); // Temporary fix
+
         // Rememebr to reload the attempt for players to continue playing the game! 
         // MinigameManager will terminate the game once all attempts are depleted
     }
     private void Win()
     {
         EventManager.TriggerEvent("WinMinigame");
+
+        manager.Win(0);
     }
 }
