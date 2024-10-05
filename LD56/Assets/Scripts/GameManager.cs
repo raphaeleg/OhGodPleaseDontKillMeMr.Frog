@@ -60,7 +60,10 @@ public class GameManager : MonoBehaviour
         inventory.Reset();
     }
 
-    private void AddDay(int val) { day++; }
+    private void AddDay(int val) { 
+        day++;
+        inventory.DecreaseRequestDuration();
+    }
     private void ToggleCycle(int val) {
         if (cycle == DayCycle.DAY) { cycle = DayCycle.NIGHT; }
         else { cycle = DayCycle.DAY; }
