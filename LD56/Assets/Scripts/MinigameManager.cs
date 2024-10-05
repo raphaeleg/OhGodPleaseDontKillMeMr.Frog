@@ -39,6 +39,12 @@ public class MinigameManager : MonoBehaviour
     }
     private void OnEnable()
     {
+        for (int i = 0; i < MAX_ATTEMPTS; i++)
+        {
+            GameObject c = Instantiate(crossPrefab, livesContainer);
+            crosses.Add(c);
+        }
+        ResetTimer();
         Reset();
         StartCoroutine("DelayedSubscription");
     }
@@ -60,16 +66,6 @@ public class MinigameManager : MonoBehaviour
         }
     }
     #endregion
-
-    private void Start()
-    {
-        for (int i = 0; i < MAX_ATTEMPTS; i++)
-        {
-            GameObject c = Instantiate(crossPrefab, livesContainer);
-            crosses.Add(c);
-        }
-        ResetTimer();
-    }
 
     private void Reset()
     {
@@ -125,7 +121,7 @@ public class MinigameManager : MonoBehaviour
         SceneLoader.LoadGameplayDay();
     }
 
-    public void Win(int val)
+    public void Win(int val = 0)
     {
         if (timer != null) {
             StopCoroutine(timer);
