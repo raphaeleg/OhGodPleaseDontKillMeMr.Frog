@@ -27,6 +27,11 @@ public class SceneLoader : MonoBehaviour
         LoadScene("Gameplay_Night");
     }
 
+    public static void LoadSettings()
+    {
+        LoadScene("Settings");
+    }
+
     public static void QuitApplication()
     {
         Application.Quit();
