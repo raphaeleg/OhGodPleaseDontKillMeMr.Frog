@@ -9,6 +9,9 @@ public class CharacterMoving : MonoBehaviour
     private void Start()
     {
         //transform.DOMove(new Vector3(1250, 560, 0), cyclelength).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);//
-        transform.DOMoveX(1425, 5);
+        transform.DOMoveX(1300, 5);
+        Lily.DORotate(new Vector3(0, 0, 10), cyclelength/3).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+
+
     }
 }
