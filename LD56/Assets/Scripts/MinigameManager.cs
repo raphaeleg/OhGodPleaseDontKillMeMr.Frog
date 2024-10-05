@@ -6,8 +6,12 @@ using UnityEngine.UI;
 
 public class MinigameManager : MonoBehaviour
 {
+    private const int STEAL_SUCCESS_SUSPICION = 10;
+    private const int STEAL_FAIL_SUSPICION = 25;
+
     private const int MAX_ATTEMPTS = 3;
     private int lives = 0;
+
     [SerializeField] private Transform livesContainer;
     [SerializeField] private GameObject crossPrefab;
     [SerializeField] private Sprite activeCross;
@@ -20,7 +24,7 @@ public class MinigameManager : MonoBehaviour
     private void Awake()
     {
         SubscribedEvents = new() {
-            { "FailedMinigame", LoseLife },
+            { "LoseMinigameAttempt", LoseLife },
             { "WinMinigame", Win },
         };
     }
@@ -75,18 +79,16 @@ public class MinigameManager : MonoBehaviour
         if (lives >= MAX_ATTEMPTS)
         {
             // TODO: Show player failed,
+            EventManager.TriggerEvent("AddSuspicion", STEAL_FAIL_SUSPICION);
             SceneLoader.LoadGameplayDay();
             return;
         }
-        // TODO: Replay minigame
     }
 
     private void Win(int val)
     {
-        // WinMinigame is listened by Gamemanager as well,
-        // which automatically puts the exotic animal in the inventory list
-
         // TODO: Show player win
+        EventManager.TriggerEvent("AddSuspicion", STEAL_SUCCESS_SUSPICION);
         SceneLoader.LoadGameplayDay();
     }
 }
