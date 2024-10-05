@@ -12,6 +12,11 @@ public class SceneLoader : MonoBehaviour
         LoadScene("MainMenu");
     }
 
+    public static void LoadOpeningScene()
+    {
+        LoadScene("Cutscene_Opening");
+    }
+
     public static void LoadGameplay()
     {
         LoadScene("Gameplay");
