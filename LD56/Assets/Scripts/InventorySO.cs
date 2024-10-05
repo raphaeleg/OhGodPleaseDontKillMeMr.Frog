@@ -29,4 +29,9 @@ public class Inventory : ScriptableObject {
         currentAnimals.Clear();
         requestAnimal.Clear();
     }
+    public void GainExoticAnimal()
+    {
+        currentAnimals.Add(requestAnimal.animal);
+        requestAnimal.Clear();
+    }
 }

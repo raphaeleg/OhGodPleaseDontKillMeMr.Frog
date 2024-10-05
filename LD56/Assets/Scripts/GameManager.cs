@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
             { "SubtractSuspicion", SubtractSuspicion },
             { "AddMoney", AddMoney },
             { "SubtractMoney", SubtractMoney },
+            { "WinMinigame", GainExoticAnimal }
         };
     }
     private void OnEnable()
@@ -95,4 +96,5 @@ public class GameManager : MonoBehaviour
             // TODO: Lose condition
         }
     }
+    private void GainExoticAnimal(int val) { inventory.GainExoticAnimal();  }
 }

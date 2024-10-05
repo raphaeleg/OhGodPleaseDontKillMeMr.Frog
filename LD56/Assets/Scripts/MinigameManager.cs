@@ -60,6 +60,13 @@ public class MinigameManager : MonoBehaviour
         lives = 0;
     }
 
+    private void SetSprite(Sprite s, int index)
+    {
+        var currentLife = crosses[index];
+        currentLife.GetComponent<Image>().sprite = s;
+        crosses[index] = currentLife;
+    }
+
     public void LoseLife(int val)
     {
         SetSprite(activeCross, lives);
@@ -74,15 +81,11 @@ public class MinigameManager : MonoBehaviour
         // TODO: Replay minigame
     }
 
-    private void SetSprite(Sprite s, int index)
-    {
-        var currentLife = crosses[index];
-        currentLife.GetComponent<Image>().sprite = s;
-        crosses[index] = currentLife;
-    }
-
     private void Win(int val)
     {
+        // WinMinigame is listened by Gamemanager as well,
+        // which automatically puts the exotic animal in the inventory list
+
         // TODO: Show player win
         SceneLoader.LoadGameplayDay();
     }
