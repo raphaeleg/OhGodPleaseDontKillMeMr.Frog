@@ -25,6 +25,8 @@ public class MinigameManager : MonoBehaviour
     [SerializeField] private Slider timerSlider;
     private string timer = null;
 
+    [SerializeField] private GameObject overlay;
+
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
 
@@ -77,10 +79,12 @@ public class MinigameManager : MonoBehaviour
         lives = 0;
     }
 
-    private void ResetTimer()
+    public void ResetTimer()
     {
-        if (timer != null) { StopCoroutine(timer); }
-        timer = null;
+        if (timer != null) { 
+            StopCoroutine(timer); 
+            timer = null;
+        }
         timerSlider.value = 1;
         time = TIMER_SECONDS;
         timer = "UpdateTimer";
@@ -112,7 +116,7 @@ public class MinigameManager : MonoBehaviour
         lives++;
 
         if (lives < MAX_ATTEMPTS) {
-            ResetTimer();
+            overlay.SetActive(true);
             return;
         }
 
@@ -123,7 +127,13 @@ public class MinigameManager : MonoBehaviour
 
     private void Win(int val)
     {
+        if (timer != null) {
+            StopCoroutine(timer);
+            timer = null;
+        }
+
         // TODO: Show player win
+
         EventManager.TriggerEvent("AddSuspicion", STEAL_SUCCESS_SUSPICION);
         SceneLoader.LoadGameplayDay();
     }
