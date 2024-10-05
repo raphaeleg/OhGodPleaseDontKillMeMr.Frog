@@ -125,7 +125,7 @@ public class MinigameManager : MonoBehaviour
         SceneLoader.LoadGameplayDay();
     }
 
-    private void Win(int val)
+    public void Win(int val)
     {
         if (timer != null) {
             StopCoroutine(timer);
