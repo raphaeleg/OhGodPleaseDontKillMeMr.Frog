@@ -45,7 +45,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public static void TriggerEvent(string eventName, int i)
+    public static void TriggerEvent(string eventName, int i = -1)
     {
         Action<int> thisEvent = null;
         if (eventDictionary.TryGetValue(eventName, out thisEvent))
