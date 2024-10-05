@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Inventory inventory;
 
     private const int MAX_SUSPICION = 100;
-    private int suspicion = 0;
+    [SerializeField] private int suspicion = 0;
 
-    private int money = 50;
+    [SerializeField] private int money = 50;
 
     #region EventManager
     private static GameManager Instance;    // Singleton
