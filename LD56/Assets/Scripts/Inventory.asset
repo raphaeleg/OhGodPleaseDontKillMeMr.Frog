@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   currentAnimals: []
-  requestAnimals: []
+  requestAnimal:
+    animal: {fileID: 11400000, guid: 7f4d7592a16ba3c498162966813c1795, type: 2}
+    money: 400

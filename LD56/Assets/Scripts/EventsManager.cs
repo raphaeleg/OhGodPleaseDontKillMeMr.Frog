@@ -16,6 +16,7 @@ public class EventManager : MonoBehaviour
         }
         Instance = this;
         eventDictionary = new Dictionary<string, Action<int>>();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public static void StartListening(string eventName, Action<int> listener)

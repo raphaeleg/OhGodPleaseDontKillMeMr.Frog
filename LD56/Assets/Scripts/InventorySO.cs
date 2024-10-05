@@ -3,42 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Inventory : ScriptableObject
-{
+public class Inventory : ScriptableObject {
+    [Serializable]
     public struct Request
     {
-        public Animal requestedAnimal;
-        public int dayDuration;
+        public Animal animal;
+        public int money;
 
-        public Request(Animal a, int d)
-        {
-            requestedAnimal = a;
-            dayDuration = d;
+        public Request(Animal a, int m) {
+            animal = a;
+            money = m;
         }
-        public void DecreaseDuration() { this.dayDuration--; }
+
+        public void Clear() {
+            animal = null;
+            money = 0;
+        }
     }
 
     public List<Animal> currentAnimals;
-    public List<Request> requestAnimals;
-
-    public void AddRequest(Animal a, int d) { requestAnimals.Add(new Request(a, d));}
-
-    public void DecreaseRequestDuration()
-    {
-        // NEEDS TO BE TESTED
-        foreach (Request r in requestAnimals)
-        {
-            r.DecreaseDuration();
-            if (r.dayDuration > 0) { return; }
-            
-            // CASE TODO: When request expires
-            requestAnimals.Remove(r);
-        }
-    }
+    public Request requestAnimal;
 
     public void Reset()
     {
         currentAnimals.Clear();
-        requestAnimals.Clear();
+        requestAnimal.Clear();
     }
 }

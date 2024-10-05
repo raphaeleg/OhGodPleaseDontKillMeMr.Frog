@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
+        if (SubscribedEvents == null) { return; }
         foreach (var pair in SubscribedEvents)
         {
             EventManager.StopListening(pair.Key, pair.Value);
@@ -57,12 +58,12 @@ public class GameManager : MonoBehaviour
     {
         day = 0;
         cycle = DayCycle.DAY;
-        inventory.Reset();
+        //inventory.Reset();
     }
 
     private void AddDay(int val) { 
         day++;
-        inventory.DecreaseRequestDuration();
+        inventory.requestAnimal.Clear();
     }
     private void ToggleCycle(int val) {
         if (cycle == DayCycle.DAY) { cycle = DayCycle.NIGHT; }

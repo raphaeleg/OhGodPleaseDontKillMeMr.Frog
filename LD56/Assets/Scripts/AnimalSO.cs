@@ -6,5 +6,5 @@ using UnityEngine;
 public class Animal : ScriptableObject
 {
     public string species;
-    // sprite
+    public Sprite sprite; 
 }
