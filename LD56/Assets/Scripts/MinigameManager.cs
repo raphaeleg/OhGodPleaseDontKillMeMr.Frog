@@ -9,7 +9,7 @@ public class MinigameManager : MonoBehaviour
     private const int STEAL_SUCCESS_SUSPICION = 10;
     private const int STEAL_FAIL_SUSPICION = 25;
 
-    private const int MAX_ATTEMPTS = 3;
+    [SerializeField] private int MAX_ATTEMPTS = 3;
     private int lives = 0;
 
     [Header("Lives")]
