@@ -12,11 +12,18 @@ public class MinigameManager : MonoBehaviour
     private const int MAX_ATTEMPTS = 3;
     private int lives = 0;
 
+    [Header("Lives")]
     [SerializeField] private Transform livesContainer;
     [SerializeField] private GameObject crossPrefab;
     [SerializeField] private Sprite activeCross;
     [SerializeField] private Sprite deactiveCross;
     private List<GameObject> crosses = new();
+
+    [Header("Timer")]
+    private const float TIMER_SECONDS = 30f;
+    private float time = 0;
+    [SerializeField] private Slider timerSlider;
+    private string timer = null;
 
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -59,6 +66,7 @@ public class MinigameManager : MonoBehaviour
             GameObject c = Instantiate(crossPrefab, livesContainer);
             crosses.Add(c);
         }
+        ResetTimer();
     }
 
     private void Reset()
@@ -69,6 +77,28 @@ public class MinigameManager : MonoBehaviour
         lives = 0;
     }
 
+    private void ResetTimer()
+    {
+        if (timer != null) { StopCoroutine(timer); }
+        timer = null;
+        timerSlider.value = 1;
+        time = TIMER_SECONDS;
+        timer = "UpdateTimer";
+        StartCoroutine(timer);
+    }
+
+    private IEnumerator UpdateTimer()
+    {
+        const float frequency = 1.0f;
+        while (time >= 0)
+        {
+            yield return new WaitForSeconds(frequency);
+            time -= frequency;
+            timerSlider.value = time/TIMER_SECONDS;
+        }
+        LoseLife();
+    }
+
     private void SetSprite(Sprite s, int index)
     {
         var currentLife = crosses[index];
@@ -76,18 +106,19 @@ public class MinigameManager : MonoBehaviour
         crosses[index] = currentLife;
     }
 
-    public void LoseLife(int val)
+    public void LoseLife(int val = 0)
     {
         SetSprite(activeCross, lives);
-
         lives++;
-        if (lives >= MAX_ATTEMPTS)
-        {
-            // TODO: Show player failed,
-            EventManager.TriggerEvent("AddSuspicion", STEAL_FAIL_SUSPICION);
-            SceneLoader.LoadGameplayDay();
+
+        if (lives < MAX_ATTEMPTS) {
+            ResetTimer();
             return;
         }
+
+        // TODO: Show player failed, pause and ask for retry or give up
+        EventManager.TriggerEvent("AddSuspicion", STEAL_FAIL_SUSPICION);
+        SceneLoader.LoadGameplayDay();
     }
 
     private void Win(int val)
