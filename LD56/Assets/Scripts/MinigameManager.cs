@@ -30,11 +30,16 @@ public class MinigameManager : MonoBehaviour
     }
     private void OnEnable()
     {
+        Reset();
+        StartCoroutine("DelayedSubscription");
+    }
+    private IEnumerator DelayedSubscription()
+    {
+        yield return new WaitForSeconds(0.0001f);
         foreach (var pair in SubscribedEvents)
         {
             EventManager.StartListening(pair.Key, pair.Value);
         }
-        Reset();
     }
 
     private void OnDisable()

@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
+        StartCoroutine("DelayedSubscription");
+    }
+    private IEnumerator DelayedSubscription()
+    {
+        yield return new WaitForSeconds(0.0001f);
         foreach (var pair in SubscribedEvents)
         {
             EventManager.StartListening(pair.Key, pair.Value);
