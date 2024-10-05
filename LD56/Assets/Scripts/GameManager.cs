@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Inventory inventory;
 
+    private const int MAX_SUSPICION = 100;
+    private int suspicion = 0;
+
+    private int money = 50;
+
     #region EventManager
     private static GameManager Instance;    // Singleton
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -29,6 +34,10 @@ public class GameManager : MonoBehaviour
         SubscribedEvents = new() {
             { "NextDay", AddDay },
             { "NextDayCycle", ToggleCycle },
+            { "AddSuspicion", AddSuspicion },
+            { "SubtractSuspicion", SubtractSuspicion },
+            { "AddMoney", AddMoney },
+            { "SubtractMoney", SubtractMoney },
         };
     }
     private void OnEnable()
@@ -68,5 +77,22 @@ public class GameManager : MonoBehaviour
     private void ToggleCycle(int val) {
         if (cycle == DayCycle.DAY) { cycle = DayCycle.NIGHT; }
         else { cycle = DayCycle.DAY; }
+    }
+    private void AddSuspicion(int val)
+    {
+        suspicion += val;
+        if (suspicion >= MAX_SUSPICION)
+        {
+            // TODO: Lose condition
+        }
+    }
+    private void SubtractSuspicion(int val) { suspicion -= 10; }    // only way to subtract is by selling normal animals
+    private void AddMoney(int val) { money += val; }
+    private void SubtractMoney(int val) { 
+        money -= val; 
+        if (money < 0)
+        {
+            // TODO: Lose condition
+        }
     }
 }
