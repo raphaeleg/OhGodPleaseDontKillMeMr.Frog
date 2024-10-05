@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private int day = 0;
     private DayCycle cycle = DayCycle.DAY;
 
+    [SerializeField] private Inventory inventory;
+
     #region EventManager
     private static GameManager Instance;    // Singleton
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         day = 0;
         cycle = DayCycle.DAY;
+        inventory.Reset();
     }
 
     private void AddDay(int val) { day++; }
