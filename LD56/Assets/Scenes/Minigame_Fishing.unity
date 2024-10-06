@@ -447,8 +447,6 @@ MonoBehaviour:
   MAX_ATTEMPTS: 3
   livesContainer: {fileID: 2066977945}
   crossPrefab: {fileID: 6055317623149584597, guid: 149afdaeff4c17649ba16411458f7faf, type: 3}
-  activeCross: {fileID: 21300000, guid: c413ae625e9d41e4e80aacf603037a63, type: 3}
-  deactiveCross: {fileID: 21300000, guid: fd47b6852846bac45a9ec87d506f4e86, type: 3}
   timerSlider: {fileID: 487928496}
   overlay: {fileID: 38769467}
   winOverlay: {fileID: 1000534330}
