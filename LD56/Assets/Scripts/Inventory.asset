@@ -22,14 +22,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b76374432b31ef44a2efba31cc94005, type: 2}
   - {fileID: 11400000, guid: 8cb2c0740d222234894d40ed0f4dc663, type: 2}
   - {fileID: 11400000, guid: 998f7b287bbb80d4086d055619a514de, type: 2}
-  - {fileID: 11400000, guid: 64523f363e56aba4e887d119669d9897, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 6fd0caddeadb14143a74fb3a61c7938b, type: 2}
   EXOTIC_COUNT: 4
-  NORMAL_COUNT: 9
+  NORMAL_COUNT: 10
   requestAnimal:
     animal: {fileID: 11400000, guid: 6fd0caddeadb14143a74fb3a61c7938b, type: 2}
     money: 500

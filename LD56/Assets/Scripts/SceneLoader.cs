@@ -43,6 +43,7 @@ public class SceneLoader : MonoBehaviour
             { "StartMinigameLockpick", LoadMinigameLockpick },
             { "StartMinigameFishing", LoadMinigameFishing },
             { "StartMinigameDino", LoadMinigameDino },
+            { "LoadNight", LoadGameplayNight },
         };
     }
     public void LoadScene()
@@ -72,7 +73,7 @@ public class SceneLoader : MonoBehaviour
         FadeLevel("Gameplay_Day");
     }
 
-    public static void LoadGameplayNight()
+    public static void LoadGameplayNight(int index = 0)
     {
         FadeLevel("Gameplay_Night");
     }
@@ -92,9 +93,9 @@ public class SceneLoader : MonoBehaviour
         // TODO: Wait for game implementation
     }
 
-    public static void LoadSettings()
+    public static void LoadEnding()
     {
-        FadeLevel("Settings");
+        FadeLevel("Gameplay_Ending");
     }
 
     public static void QuitApplication()

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DayManager : MonoBehaviour
 {
-    private const int CUSTOMER_PER_DAY = 4;
+    private const int CUSTOMER_PER_DAY = 3;
     private int customerTracker = 0;
     [SerializeField] private Inventory inventory;
 
@@ -55,18 +55,25 @@ public class DayManager : MonoBehaviour
             a.GetComponent<Day_AnimalOption>().animal = animal;
             a.GetComponent<Animator>().Play(animal.GetSpeciesName());
         }
-        StartCoroutine(GameLoop());
+        StartCoroutine(StartLoop());
+    }
+
+    private IEnumerator StartLoop()
+    {
+        yield return new WaitForSeconds(1f);
+        customerTracker++;
+        EventManager.TriggerEvent("RandomCustomer");
     }
 
     private IEnumerator GameLoop()
     {
-        yield return new WaitForSeconds(1f);
-        if (customerTracker >= CUSTOMER_PER_DAY)
-        {
+        yield return new WaitForSeconds(2f);
+        if (customerTracker >= CUSTOMER_PER_DAY) {
             EventManager.TriggerEvent("NextDayCycle");
+        } else {
+            customerTracker++;
+            EventManager.TriggerEvent("RandomCustomer");
         }
-        customerTracker++;
-        EventManager.TriggerEvent("RandomCustomer");
     }
 
     public void OnAnimalClick(int id)
@@ -75,5 +82,7 @@ public class DayManager : MonoBehaviour
         // Check if it's a disguise pet
 
         EventManager.TriggerEvent("PresentAnimal", id);
+
+        StartCoroutine(GameLoop());
     }
 }

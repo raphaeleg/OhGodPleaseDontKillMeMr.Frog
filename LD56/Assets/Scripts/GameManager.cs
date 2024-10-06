@@ -79,7 +79,10 @@ public class GameManager : MonoBehaviour
         inventory.requestAnimal.Clear();
     }
     private void ToggleCycle(int val) {
-        if (cycle == DayCycle.DAY) { cycle = DayCycle.NIGHT; }
+        if (cycle == DayCycle.DAY) { 
+            cycle = DayCycle.NIGHT;
+            EventManager.TriggerEvent("LoadNight");
+        }
         else { cycle = DayCycle.DAY; }
     }
     private void AddSuspicion(int val)

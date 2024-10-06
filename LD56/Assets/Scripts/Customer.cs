@@ -13,7 +13,7 @@ public class Customer : MonoBehaviour
     private int animalID = 0;
     [SerializeField] private Inventory inventory;
 
-    private const float ENTER_DURATION = 5.0f;
+    private const float ENTER_DURATION = 2.0f;
     [SerializeField] private Transform Lily;
     [SerializeField] private float cyclelength = 2;
     [SerializeField] private GameObject dialogueBox;
