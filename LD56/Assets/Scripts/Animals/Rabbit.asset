@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   species: Rabbit
   type: 0
+  id: 10

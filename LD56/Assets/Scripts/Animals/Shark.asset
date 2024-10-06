@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   species: Shark
   type: 2
+  id: 2

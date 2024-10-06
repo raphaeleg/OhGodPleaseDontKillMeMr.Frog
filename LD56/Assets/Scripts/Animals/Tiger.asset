@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   species: Tiger
   type: 2
+  id: 3

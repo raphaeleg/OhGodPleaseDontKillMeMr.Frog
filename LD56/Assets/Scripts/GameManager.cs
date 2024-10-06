@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     private enum DayCycle { DAY, NIGHT };
 
-    private int day = 0;
     private DayCycle cycle = DayCycle.DAY;
 
     [SerializeField] private Inventory inventory;
@@ -71,13 +70,12 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
-        day = 0;
         cycle = DayCycle.DAY;
         //inventory.Reset();
     }
 
     private void AddDay(int val) { 
-        day++;
+        inventory.day++;
         inventory.requestAnimal.Clear();
     }
     private void ToggleCycle(int val) {

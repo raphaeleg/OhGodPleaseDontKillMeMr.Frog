@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   species: Bird
   type: 0
+  id: 4

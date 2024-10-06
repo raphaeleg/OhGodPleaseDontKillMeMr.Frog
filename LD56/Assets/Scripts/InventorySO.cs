@@ -22,17 +22,25 @@ public class Inventory : ScriptableObject {
     }
 
     public List<Animal> currentAnimals;
+    public int EXOTIC_COUNT = 4;
     public int NORMAL_COUNT = 10;
     public Request requestAnimal;
+    public int day = 0;
 
     public void Reset()
     {
         currentAnimals.Clear();
         requestAnimal.Clear();
+        day = 0;
     }
     public void GainExoticAnimal()
     {
         currentAnimals.Add(requestAnimal.animal);
         requestAnimal.Clear();
+    }
+    public string GetName(int id)
+    {
+        Animal a = currentAnimals.Find(item => item.id == id);
+        return a.GetSpeciesName();
     }
 }

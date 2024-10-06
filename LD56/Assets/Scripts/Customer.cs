@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,11 @@ public class Customer : MonoBehaviour
 
     private int animalID = 0;
     [SerializeField] private Inventory inventory;
+
+    private const float ENTER_DURATION = 5.0f;
+    [SerializeField] private Transform Lily;
+    [SerializeField] private float cyclelength = 2;
+    [SerializeField] private GameObject dialogueBox;
 
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -45,18 +51,35 @@ public class Customer : MonoBehaviour
     }
     #endregion
 
-    private void Generate(int val)
+    private void Generate(int val = 0)
     {
-        animalID = UnityEngine.Random.Range(0, inventory.NORMAL_COUNT);
+        animalID = UnityEngine.Random.Range(inventory.EXOTIC_COUNT, inventory.NORMAL_COUNT + inventory.EXOTIC_COUNT);
+        StartCoroutine(CharacterAnimation());
     }
 
     private void GenerateSpecial(int val)
     {
-        // animalID = day
+        animalID = inventory.day;
+        StartCoroutine(CharacterAnimation());
+    }
+
+    private IEnumerator CharacterAnimation()
+    {
+        CharacterEnter();
+        yield return new WaitForSeconds(ENTER_DURATION);
+        dialogueBox.SetActive(true);
+        dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(inventory.GetName(animalID));
+    }
+    private void CharacterEnter()
+    {
+        transform.DOMoveX(1300, ENTER_DURATION);
+        Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 
     private void React(int id)
     {
+        // TODO: Visually show results
+
         if (id == animalID)
         {
             EventManager.TriggerEvent("AddMoney", CORRECT_MONEY);
@@ -64,6 +87,8 @@ public class Customer : MonoBehaviour
         {
             EventManager.TriggerEvent("AddSuspicion", INCORRECT_SUS);
         }
+
+        dialogueBox.SetActive(false);
 
         // Trigger Leave Animation
     }

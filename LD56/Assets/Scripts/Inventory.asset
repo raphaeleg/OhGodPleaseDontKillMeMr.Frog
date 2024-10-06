@@ -12,7 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58260cad4f54f5949a24b2103d40e5fa, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  currentAnimals: []
+  currentAnimals:
+  - {fileID: 11400000, guid: 2cbdbce890016bd4e9ca60e2297d8e76, type: 2}
+  - {fileID: 11400000, guid: cb637e105c77db74db60231168472e79, type: 2}
+  - {fileID: 11400000, guid: 7f4d7592a16ba3c498162966813c1795, type: 2}
+  - {fileID: 11400000, guid: 135e212bc41b15341b9e34fee6dc83d8, type: 2}
+  - {fileID: 11400000, guid: 472177828354a4c40947873256ec5abd, type: 2}
+  - {fileID: 11400000, guid: 5bdefda674a1c3d42aea6ec9cd957ee4, type: 2}
+  - {fileID: 11400000, guid: 0b76374432b31ef44a2efba31cc94005, type: 2}
+  - {fileID: 11400000, guid: 8cb2c0740d222234894d40ed0f4dc663, type: 2}
+  - {fileID: 11400000, guid: 998f7b287bbb80d4086d055619a514de, type: 2}
+  EXOTIC_COUNT: 4
+  NORMAL_COUNT: 9
   requestAnimal:
     animal: {fileID: 11400000, guid: 64523f363e56aba4e887d119669d9897, type: 2}
     money: 400
+  day: 0

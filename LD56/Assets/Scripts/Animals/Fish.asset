@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   species: Fish
   type: 0
+  id: 8
