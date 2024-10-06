@@ -25,7 +25,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _MaxBound: 0.645
-    - _MinBound: 0.355
+    - _MaxBound: 0.57500005
+    - _MinBound: 0.42499998
     m_Colors: []
   m_BuildTextureStacks: []
