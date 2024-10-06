@@ -22,6 +22,7 @@ public class Inventory : ScriptableObject {
     }
 
     public List<Animal> currentAnimals;
+    public int NORMAL_COUNT = 10;
     public Request requestAnimal;
 
     public void Reset()
