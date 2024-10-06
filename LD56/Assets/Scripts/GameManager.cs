@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int money = 50;
 
     #region EventManager
-    private static GameManager Instance;    // Singleton
+    public static GameManager Instance;    // Singleton
     private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
