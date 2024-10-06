@@ -174,6 +174,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: b41c99415b13d9e41ba9b5e12c3e6c4d, type: 2}
   exoticAnimalAnim: {fileID: 563042573}
   exoticAnimalText: {fileID: 2124104785}
+  loader: {fileID: 1174404050}
 --- !u!114 &132404691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6626958240859819966, guid: 09975007245268643a0b4723d0203b41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6626958240859819966, guid: 09975007245268643a0b4723d0203b41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -783,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6626958240859819966, guid: 09975007245268643a0b4723d0203b41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StealFailed
+      value: StealAction
       objectReference: {fileID: 0}
     - target: {fileID: 6626958240859819966, guid: 09975007245268643a0b4723d0203b41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

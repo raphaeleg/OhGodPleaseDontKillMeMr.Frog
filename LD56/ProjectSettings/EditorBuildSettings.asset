@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay_Day.unity
     guid: 97201127af9508e4da0bcd8cbed4c4b2
+  - enabled: 1
+    path: Assets/Scenes/Minigame_Lockpick.unity
+    guid: 054158b15457fe84585f2b973a350560
+  - enabled: 1
+    path: Assets/Scenes/Minigame_Fishing.unity
+    guid: edb1b52a5d2f33542936299790cb13fe
   m_configObjects: {}
