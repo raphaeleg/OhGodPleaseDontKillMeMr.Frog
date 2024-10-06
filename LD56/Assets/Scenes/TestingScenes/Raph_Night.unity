@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: b41c99415b13d9e41ba9b5e12c3e6c4d, type: 2}
-  exoticAnimalImg: {fileID: 2124104787}
+  exoticAnimalAnim: {fileID: 0}
   exoticAnimalText: {fileID: 2124104785}
 --- !u!114 &132404691
 MonoBehaviour:

@@ -5,6 +5,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Animal : ScriptableObject
 {
+    public enum AnimalType { NORMAL, DISGUISE, EXOTIC };
+
     public string species;
-    public Sprite sprite; 
+    public AnimalType type;
+
+    public string GetSpeciesName()
+    {
+        if (type == AnimalType.DISGUISE) { return species + "D"; }
+        return species;
+    }
 }

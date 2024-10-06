@@ -7,12 +7,12 @@ using TMPro;
 public class NightManager : MonoBehaviour
 {
     [SerializeField] private Inventory inventory;
-    [SerializeField] private Image exoticAnimalImg;
+    [SerializeField] private Animator exoticAnimalAnim;
     [SerializeField] private TMP_Text exoticAnimalText;
 
     public void OnEnable()
     {
-        exoticAnimalImg.sprite = inventory.requestAnimal.animal.sprite;
+        exoticAnimalAnim.Play(inventory.requestAnimal.animal.GetSpeciesName());
         exoticAnimalText.text = "Reward: $" + inventory.requestAnimal.money;
     }
 }
