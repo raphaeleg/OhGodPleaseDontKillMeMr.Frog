@@ -20,10 +20,10 @@ public class MinigameManager : MonoBehaviour
     private List<GameObject> crosses = new();
 
     [Header("Timer")]
-    private const float TIMER_SECONDS = 30f;
+    private const float TIMER_SECONDS = 10f;
     private float time = 0;
     [SerializeField] private Slider timerSlider;
-    private string timer = null;
+    private string activeCoroutine = null;
 
     [SerializeField] private GameObject overlay;
 
@@ -77,14 +77,11 @@ public class MinigameManager : MonoBehaviour
 
     public void ResetTimer()
     {
-        if (timer != null) { 
-            StopCoroutine(timer); 
-            timer = null;
-        }
+        DeactivateTimerCoroutine();
         timerSlider.value = 1;
         time = TIMER_SECONDS;
-        timer = "UpdateTimer";
-        StartCoroutine(timer);
+        activeCoroutine = "UpdateTimer";
+        ActivateTimerCoroutine();
     }
 
     private IEnumerator UpdateTimer()
@@ -97,6 +94,7 @@ public class MinigameManager : MonoBehaviour
             timerSlider.value = time/TIMER_SECONDS;
         }
         LoseLife();
+        EventManager.TriggerEvent("MinigameTimerDeplete");
     }
 
     private void SetSprite(Sprite s, int index)
@@ -123,14 +121,27 @@ public class MinigameManager : MonoBehaviour
 
     public void Win(int val = 0)
     {
-        if (timer != null) {
-            StopCoroutine(timer);
-            timer = null;
-        }
+        DeactivateTimerCoroutine();
 
         // TODO: Show player win
 
         EventManager.TriggerEvent("AddSuspicion", STEAL_SUCCESS_SUSPICION);
         SceneLoader.LoadGameplayDay();
+    }
+
+    private void DeactivateTimerCoroutine()
+    {
+        if (activeCoroutine == null) { return; }
+        StopCoroutine(activeCoroutine);
+        activeCoroutine = null;
+    }
+    private void ActivateTimerCoroutine()
+    {
+        if (activeCoroutine != null)
+        {
+            DeactivateTimerCoroutine();
+        }
+        activeCoroutine = "UpdateTimer";
+        StartCoroutine(activeCoroutine);
     }
 }
