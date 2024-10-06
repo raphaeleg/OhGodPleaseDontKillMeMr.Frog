@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 288383222}
   - component: {fileID: 288383221}
   - component: {fileID: 288383220}
-  - component: {fileID: 288383223}
+  - component: {fileID: 288383225}
   - component: {fileID: 288383224}
   m_Layer: 5
   m_Name: MinigameManager
@@ -678,25 +678,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &288383223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288383218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9796f88571a4b74aa049ac2c08845b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MAX_ATTEMPTS: 6
-  livesContainer: {fileID: 2066977945}
-  crossPrefab: {fileID: 6055317623149584597, guid: 149afdaeff4c17649ba16411458f7faf, type: 3}
-  activeCross: {fileID: 21300000, guid: d7aa99f724714b84aa26abf803bb7a37, type: 3}
-  deactiveCross: {fileID: 21300000, guid: 667be2c3bc5ee704697c1b7c00d95a1d, type: 3}
-  timerSlider: {fileID: 487928496}
-  overlay: {fileID: 38769467}
 --- !u!114 &288383224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,6 +690,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd76c39145f933149a6e851cbdbd61c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &288383225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288383218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba219a558d79bb5438d2caaa26fcaef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_ATTEMPTS: 6
+  livesContainer: {fileID: 2066977945}
+  crossPrefab: {fileID: 6055317623149584597, guid: 149afdaeff4c17649ba16411458f7faf, type: 3}
+  activeCross: {fileID: 21300000, guid: d7aa99f724714b84aa26abf803bb7a37, type: 3}
+  deactiveCross: {fileID: 21300000, guid: 667be2c3bc5ee704697c1b7c00d95a1d, type: 3}
+  timerSlider: {fileID: 487928496}
+  overlay: {fileID: 38769467}
+  digitalLock: {fileID: 60079816}
 --- !u!1 &450627453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: 6626958240859819966, guid: 09975007245268643a0b4723d0203b41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 288383223}
+      objectReference: {fileID: 0}
     - target: {fileID: 6626958240859819966, guid: 09975007245268643a0b4723d0203b41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1789,7 +1790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guessInput: {fileID: 450627455}
   guessMarker: {fileID: 1191893491}
-  manager: {fileID: 288383223}
+  manager: {fileID: 0}
 --- !u!1 &1314236812
 GameObject:
   m_ObjectHideFlags: 0

@@ -80,13 +80,12 @@ public class Minigame_Lockpick : MonoBehaviour
                 // If right place and right letter
                 if (guess.ElementAt(i) == guessWord.ElementAt(i))
                 {
-                    guessMarker.text += ".";
+                    guessMarker.text += guess.ElementAt(i);
                 }
 
                 else
                 {
                     // If not right place, check if it is one of the remaining letters but in wrong position
-                    Debug.Log(answerCopy);
                     if (answerCopy.Contains(guess.ElementAt(i))) 
                     {
                         guessMarker.text += "?";
@@ -109,18 +108,20 @@ public class Minigame_Lockpick : MonoBehaviour
 
     private void LostAttempt()
     {
-        // TODO: Check why events not triggering
+        StartCoroutine("ClearLetters");
         EventManager.TriggerEvent("LoseMinigameAttempt");
-
-        manager.LoseLife(); // Temporary fix
 
         // Rememebr to reload the attempt for players to continue playing the game! 
         // MinigameManager will terminate the game once all attempts are depleted
     }
+
+    private IEnumerator ClearLetters()
+    {
+        yield return new WaitForSeconds(2f);
+        guessInput.text = string.Empty;
+    }
     private void Win()
     {
         EventManager.TriggerEvent("WinMinigame");
-
-        manager.Win(0);
     }
 }
