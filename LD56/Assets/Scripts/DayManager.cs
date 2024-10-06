@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayManager : MonoBehaviour
 {
     private const int CUSTOMER_PER_DAY = 3;
     private int customerTracker = 0;
     [SerializeField] private Inventory inventory;
+
+    [SerializeField] private GameObject animalDisplay;
 
     [Header("Animal Counter")]
     [SerializeField] private Transform counter;
@@ -81,9 +84,28 @@ public class DayManager : MonoBehaviour
     {
         // Check if it's presenting to special request
         // Check if it's a disguise pet
+        ServeCustomer(id);
+    }
 
+    private void ServeCustomer(int id)
+    {
+        StartCoroutine("CustomerWait", id);
+        StartCoroutine("PlaceAnimal", id);
+    }
+
+    private IEnumerator CustomerWait(int id)
+    {
+        yield return new WaitForSeconds(2f);
         EventManager.TriggerEvent("PresentAnimal", id);
 
         StartCoroutine(GameLoop());
+    }
+
+    private IEnumerator PlaceAnimal(int id)
+    {
+        animalDisplay.SetActive(true);
+        animalDisplay.GetComponent<Animator>().Play(inventory.GetName(id));
+        yield return new WaitForSeconds(2f);
+        animalDisplay.SetActive(false);
     }
 }
