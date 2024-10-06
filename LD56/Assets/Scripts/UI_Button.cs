@@ -14,7 +14,7 @@ public class UI_Button : MonoBehaviour, IPointerClickHandler
         if (isDark)
         {
             gameObject.GetComponent<Animator>().Play("Button_Dark");
-            transform.GetChild(0).GetComponent<TMP_Text>().color = new(1,1,1,1);
+            transform.GetChild(0).GetComponent<TMP_Text>().color = new(0,0,0,0);
         }
     }
     public void OnPointerClick(PointerEventData eventData)

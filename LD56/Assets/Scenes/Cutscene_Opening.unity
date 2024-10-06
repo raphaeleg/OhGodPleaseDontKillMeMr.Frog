@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5754085103296551501, guid: 09975007245268643a0b4723d0203b41, type: 3}
+      propertyPath: isDark
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6180407071741172010, guid: 09975007245268643a0b4723d0203b41, type: 3}
       propertyPath: m_text
       value: Skip Cutscene
