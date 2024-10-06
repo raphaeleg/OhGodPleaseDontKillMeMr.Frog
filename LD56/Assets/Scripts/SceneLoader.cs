@@ -79,7 +79,6 @@ public class SceneLoader : MonoBehaviour
 
     public static void LoadMinigameLockpick(int index = 0)
     {
-        Debug.Log("GameCalled");
         FadeLevel("Minigame_Lockpick");
     }
 
