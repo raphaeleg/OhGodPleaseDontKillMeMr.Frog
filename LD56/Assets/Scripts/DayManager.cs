@@ -7,6 +7,12 @@ public class DayManager : MonoBehaviour
 {
     private const int CUSTOMER_PER_DAY = 4;
     private int customerTracker = 0;
+    [SerializeField] private Inventory inventory;
+
+    [Header("Animal Counter")]
+    [SerializeField] private Transform counter;
+    [SerializeField] private GameObject animalPrefab;
+
     #region EventManager
     private static GameManager Instance;    // Singleton
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -15,6 +21,7 @@ public class DayManager : MonoBehaviour
     {
         SubscribedEvents = new()
         {
+            { "Day_SelectAnimal", OnAnimalClick },
         };
     }
     private void OnEnable()
@@ -42,6 +49,12 @@ public class DayManager : MonoBehaviour
 
     private void Start()
     {
+        foreach(Animal animal in inventory.currentAnimals)
+        {
+            var a = Instantiate(animalPrefab, counter);
+            a.GetComponent<Day_AnimalOption>().animal = animal;
+            a.GetComponent<Animator>().Play(animal.GetSpeciesName());
+        }
         StartCoroutine(GameLoop());
     }
 
@@ -56,10 +69,11 @@ public class DayManager : MonoBehaviour
         EventManager.TriggerEvent("RandomCustomer");
     }
 
-    public void OnAnimalClick()
+    public void OnAnimalClick(int id)
     {
         // Check if it's presenting to special request
+        // Check if it's a disguise pet
 
-        EventManager.TriggerEvent("PresentAnimal");
+        EventManager.TriggerEvent("PresentAnimal", id);
     }
 }

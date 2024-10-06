@@ -60,7 +60,7 @@ public class Customer : MonoBehaviour
 
     private void GenerateSpecial(int val)
     {
-        animalID = inventory.day;
+        animalID = inventory.day-1;
         StartCoroutine(CharacterAnimation());
     }
 
@@ -91,7 +91,6 @@ public class Customer : MonoBehaviour
 
         dialogueBox.SetActive(false);
 
-        // Trigger Leave Animation
         transform.DOMoveX(-1300, ENTER_DURATION);
         Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
