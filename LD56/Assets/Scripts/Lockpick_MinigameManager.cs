@@ -139,9 +139,9 @@ public class Lockpick_MinigameManager : MonoBehaviour
 
     private IEnumerator DropLock()
     {
-        digitalLock.transform.DOMoveY(-85, dropDuration);
+        digitalLock.transform.DOMoveY(-200, dropDuration);
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         EventManager.TriggerEvent("AddSuspicion", STEAL_SUCCESS_SUSPICION);
         SceneLoader.LoadGameplayDay();
     }
