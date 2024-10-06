@@ -69,7 +69,14 @@ public class Customer : MonoBehaviour
         CharacterEnter();
         yield return new WaitForSeconds(ENTER_DURATION);
         dialogueBox.SetActive(true);
-        dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(inventory.GetName(animalID));
+        if (animalID > 3)
+        {
+            dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(inventory.GetName(animalID));
+        }
+        else
+        {
+            dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play("Envelope");
+        }
     }
     private void CharacterEnter()
     {
