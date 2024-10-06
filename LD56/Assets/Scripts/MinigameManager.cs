@@ -26,6 +26,8 @@ public class MinigameManager : MonoBehaviour
     private string activeCoroutine = null;
 
     [SerializeField] private GameObject overlay;
+    [SerializeField] private GameObject winOverlay;
+    [SerializeField] private GameObject loseOverlay;
 
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -106,6 +108,7 @@ public class MinigameManager : MonoBehaviour
 
     public void LoseLife(int val = 0)
     {
+        DeactivateTimerCoroutine();
         SetSprite(activeCross, lives);
         lives++;
 
@@ -114,19 +117,18 @@ public class MinigameManager : MonoBehaviour
             return;
         }
 
-        // TODO: Show player failed, pause and ask for retry or give up
+        loseOverlay.SetActive(true);
+
         EventManager.TriggerEvent("AddSuspicion", STEAL_FAIL_SUSPICION);
-        SceneLoader.LoadGameplayDay();
     }
 
     public void Win(int val = 0)
     {
         DeactivateTimerCoroutine();
 
-        // TODO: Show player win
+        winOverlay.SetActive(true);
 
         EventManager.TriggerEvent("AddSuspicion", STEAL_SUCCESS_SUSPICION);
-        SceneLoader.LoadGameplayDay();
     }
 
     private void DeactivateTimerCoroutine()

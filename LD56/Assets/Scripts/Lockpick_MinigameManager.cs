@@ -26,9 +26,11 @@ public class Lockpick_MinigameManager : MonoBehaviour
     private const float TIMER_SECONDS = 90f;
     private float time = 0;
     [SerializeField] private Slider timerSlider;
-    private string timer = null;
+    private string activeCoroutine = null;
 
     [SerializeField] private GameObject overlay;
+    [SerializeField] private GameObject winOverlay;
+    [SerializeField] private GameObject loseOverlay;
 
     [SerializeField] private Image digitalLock;
     private Vector2 startpos;
@@ -86,15 +88,10 @@ public class Lockpick_MinigameManager : MonoBehaviour
 
     public void ResetTimer()
     {
-        if (timer != null)
-        {
-            StopCoroutine(timer);
-            timer = null;
-        }
+        DeactivateTimerCoroutine();
         timerSlider.value = 1;
         time = TIMER_SECONDS;
-        timer = "UpdateTimer";
-        StartCoroutine(timer);
+        ActivateTimerCoroutine();
     }
 
     private IEnumerator UpdateTimer()
@@ -106,6 +103,7 @@ public class Lockpick_MinigameManager : MonoBehaviour
             time -= frequency;
             timerSlider.value = time / TIMER_SECONDS;
         }
+        EventManager.TriggerEvent("MinigameTimerDeplete");
         LoseGame();
     }
 
@@ -128,13 +126,16 @@ public class Lockpick_MinigameManager : MonoBehaviour
         }
 
         // TODO: Show player failed, pause and ask for retry or give up
-        EventManager.TriggerEvent("AddSuspicion", STEAL_FAIL_SUSPICION);
-        SceneLoader.LoadGameplayDay();
+        LoseGame();
     }
 
     public void LoseGame()
     {
-        SceneLoader.LoadGameplayDay();
+        DeactivateTimerCoroutine();
+
+        loseOverlay.SetActive(true);
+
+        EventManager.TriggerEvent("AddSuspicion", STEAL_FAIL_SUSPICION);
     }
 
     private IEnumerator DropLock()
@@ -142,19 +143,32 @@ public class Lockpick_MinigameManager : MonoBehaviour
         digitalLock.transform.DOMoveY(-200, dropDuration);
         
         yield return new WaitForSeconds(1.5f);
+
+        winOverlay.SetActive(true);
         EventManager.TriggerEvent("AddSuspicion", STEAL_SUCCESS_SUSPICION);
-        SceneLoader.LoadGameplayDay();
     }
+
 
     public void Win(int val = 0)
     {
-        if (timer != null)
-        {
-            StopCoroutine(timer);
-            timer = null;
-        }
+        DeactivateTimerCoroutine();
 
-        // TODO: Show player win
         StartCoroutine("DropLock");
+    }
+
+    private void DeactivateTimerCoroutine()
+    {
+        if (activeCoroutine == null) { return; }
+        StopCoroutine(activeCoroutine);
+        activeCoroutine = null;
+    }
+    private void ActivateTimerCoroutine()
+    {
+        if (activeCoroutine != null)
+        {
+            DeactivateTimerCoroutine();
+        }
+        activeCoroutine = "UpdateTimer";
+        StartCoroutine(activeCoroutine);
     }
 }
