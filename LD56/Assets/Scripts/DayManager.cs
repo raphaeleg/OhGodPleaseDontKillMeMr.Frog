@@ -116,6 +116,7 @@ public class DayManager : MonoBehaviour
         EventManager.TriggerEvent("SpecialCustomer");
         inventory.requestAnimal = new Inventory.Request(exoticAnimals[inventory.day-1], 100);
         yield return new WaitForSeconds(5f);
+        Debug.Log("Reached Here");
         EventManager.TriggerEvent("NextDayCycle");
     }
 }

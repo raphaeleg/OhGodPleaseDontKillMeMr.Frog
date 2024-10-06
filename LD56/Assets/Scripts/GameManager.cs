@@ -70,8 +70,8 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
-        cycle = DayCycle.DAY;
-        //inventory.Reset();
+        cycle = DayCycle.NIGHT;
+        inventory.Reset();
     }
 
     private void AddDay(int val) {
@@ -104,4 +104,14 @@ public class GameManager : MonoBehaviour
         }
     }
     private void GainExoticAnimal(int val) { inventory.GainExoticAnimal();  }
+
+    public int getMoney()
+    {
+        return money;
+    }
+
+    public int getSuspicion()
+    {
+        return suspicion;
+    }
 }
