@@ -1,35 +1,50 @@
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public static void LoadScene(string name)
+    private static Animator sceneAnimator;
+    private static string nextLevel;
+
+    private void Awake()
     {
-        SceneManager.LoadScene(name);
+        sceneAnimator = GetComponent<Animator>();
     }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(nextLevel);
+    }
+
+    public static void FadeLevel (string name)
+    {
+        nextLevel = name;
+        sceneAnimator.SetTrigger("Fade");
+    }
+
     public static void LoadMainMenu()
     {
-        LoadScene("MainMenu");
+        FadeLevel("MainMenu");
     }
 
     public static void LoadOpeningScene()
     {
-        LoadScene("Cutscene_Opening");
+        FadeLevel("Cutscene_Opening");
     }
 
     public static void LoadGameplayDay()
     {
-        LoadScene("Gameplay_Day");
+        FadeLevel("Gameplay_Day");
     }
 
     public static void LoadGameplayNight()
     {
-        LoadScene("Gameplay_Night");
+        FadeLevel("Gameplay_Night");
     }
 
     public static void LoadSettings()
     {
-        LoadScene("Settings");
+        FadeLevel("Settings");
     }
 
     public static void QuitApplication()
