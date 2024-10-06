@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Customer : MonoBehaviour
@@ -91,5 +92,7 @@ public class Customer : MonoBehaviour
         dialogueBox.SetActive(false);
 
         // Trigger Leave Animation
+        transform.DOMoveX(-1300, ENTER_DURATION);
+        Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 }
