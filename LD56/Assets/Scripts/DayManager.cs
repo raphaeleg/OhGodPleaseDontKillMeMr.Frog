@@ -114,7 +114,7 @@ public class DayManager : MonoBehaviour
     private IEnumerator SuspiciousCustomer()
     {
         EventManager.TriggerEvent("SpecialCustomer");
-        inventory.requestAnimal = new Inventory.Request(exoticAnimals[inventory.day-1], 100);
+        inventory.requestAnimal = new Inventory.Request(exoticAnimals[inventory.day-1], 100 + 50*(inventory.day - 1));
         yield return new WaitForSeconds(5f);
         Debug.Log("Reached Here");
         EventManager.TriggerEvent("NextDayCycle");
