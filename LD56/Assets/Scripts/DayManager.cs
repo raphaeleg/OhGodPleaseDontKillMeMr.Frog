@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class DayManager : MonoBehaviour
     [SerializeField] private Inventory inventory;
 
     [SerializeField] private GameObject animalDisplay;
+    [SerializeField] private List<Animal> exoticAnimals;
 
     [Header("Animal Counter")]
     [SerializeField] private Transform counter;
@@ -73,7 +75,7 @@ public class DayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         if (customerTracker >= CUSTOMER_PER_DAY) {
-            EventManager.TriggerEvent("NextDayCycle");
+            StartCoroutine("SuspiciousCustomer");
         } else {
             customerTracker++;
             EventManager.TriggerEvent("RandomCustomer");
@@ -107,5 +109,13 @@ public class DayManager : MonoBehaviour
         animalDisplay.GetComponent<Animator>().Play(inventory.GetName(id));
         yield return new WaitForSeconds(2f);
         animalDisplay.SetActive(false);
+    }
+
+    private IEnumerator SuspiciousCustomer()
+    {
+        EventManager.TriggerEvent("SpecialCustomer");
+        inventory.requestAnimal = new Inventory.Request(exoticAnimals[inventory.day-1], 100);
+        yield return new WaitForSeconds(5f);
+        EventManager.TriggerEvent("NextDayCycle");
     }
 }

@@ -21,6 +21,7 @@ public class Inventory : ScriptableObject {
         }
     }
 
+    public List<Animal> baseAnimals;
     public List<Animal> currentAnimals;
     public int EXOTIC_COUNT = 4;
     public int NORMAL_COUNT = 10;
@@ -29,7 +30,7 @@ public class Inventory : ScriptableObject {
 
     public void Reset()
     {
-        currentAnimals.Clear();
+        currentAnimals = new List<Animal>(baseAnimals);
         requestAnimal.Clear();
         day = 0;
     }

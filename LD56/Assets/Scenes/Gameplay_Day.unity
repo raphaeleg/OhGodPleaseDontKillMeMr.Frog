@@ -933,6 +933,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: b41c99415b13d9e41ba9b5e12c3e6c4d, type: 2}
   animalDisplay: {fileID: 1479336550}
+  exoticAnimals:
+  - {fileID: 11400000, guid: 64523f363e56aba4e887d119669d9897, type: 2}
+  - {fileID: 11400000, guid: b5d6a6fd1891e134f963f387f2202be0, type: 2}
+  - {fileID: 11400000, guid: fd257a83fc0c82a489d74b84c24a8790, type: 2}
+  - {fileID: 11400000, guid: 512c70b2c89d02b49a8072ddd4318899, type: 2}
   counter: {fileID: 1357948743}
   animalPrefab: {fileID: 5439436878525352388, guid: fc31a28b611d5204287310970a2c102e, type: 3}
 --- !u!4 &1401017317
