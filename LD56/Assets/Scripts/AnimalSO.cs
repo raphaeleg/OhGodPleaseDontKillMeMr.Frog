@@ -9,6 +9,7 @@ public class Animal : ScriptableObject
 
     public string species;
     public AnimalType type;
+    public int id;
 
     public string GetSpeciesName()
     {
