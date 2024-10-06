@@ -16,7 +16,7 @@ public class Customer : MonoBehaviour
     private const float ENTER_DURATION = 5.0f;
     [SerializeField] private Transform Lily;
     [SerializeField] private float cyclelength = 2;
-    [SerializeField] private GameObject dialogueBox;
+    //[SerializeField] private GameObject dialogueBox;
 
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -68,8 +68,8 @@ public class Customer : MonoBehaviour
     {
         CharacterEnter();
         yield return new WaitForSeconds(ENTER_DURATION);
-        dialogueBox.SetActive(true);
-        dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(inventory.GetName(animalID));
+        //dialogueBox.SetActive(true);
+        //dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(inventory.GetName(animalID));
     }
     private void CharacterEnter()
     {
@@ -89,7 +89,7 @@ public class Customer : MonoBehaviour
             EventManager.TriggerEvent("AddSuspicion", INCORRECT_SUS);
         }
 
-        dialogueBox.SetActive(false);
+        //dialogueBox.SetActive(false);
 
         // Trigger Leave Animation
         transform.DOMoveX(-1300, ENTER_DURATION);
