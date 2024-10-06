@@ -26,6 +26,7 @@ public class DayManager : MonoBehaviour
     }
     private void OnEnable()
     {
+        customerTracker = 0;
         StartCoroutine("DelayedSubscription");
     }
     private IEnumerator DelayedSubscription()

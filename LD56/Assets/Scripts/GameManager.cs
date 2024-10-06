@@ -74,11 +74,12 @@ public class GameManager : MonoBehaviour
         //inventory.Reset();
     }
 
-    private void AddDay(int val) { 
+    private void AddDay(int val) {
+        ToggleCycle();
         inventory.day++;
         inventory.requestAnimal.Clear();
     }
-    private void ToggleCycle(int val) {
+    private void ToggleCycle(int val = 0) {
         if (cycle == DayCycle.DAY) { 
             cycle = DayCycle.NIGHT;
             EventManager.TriggerEvent("LoadNight");
