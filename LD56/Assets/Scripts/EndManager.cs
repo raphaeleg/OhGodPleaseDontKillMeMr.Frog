@@ -18,10 +18,12 @@ public class EndManager : MonoBehaviour
         }
         else if (GameManager.Instance.getMoney() < 400)
         {
+            background.GetComponent<Animator>().Play("Mafia_Ending");
             gameEndText.text = "Oh No! You didn't collect enough Money!! The Mafia was unhappy and killed you! (Ending 2/3)";
         }
         else
         {
+            background.GetComponent<Animator>().Play("Happy_Ending");
             gameEndText.text = "Horray!! You get to live another day!! (Ending 3/3)";
         }
     }
