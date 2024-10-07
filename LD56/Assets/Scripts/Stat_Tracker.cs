@@ -59,12 +59,12 @@ public class Stat_Tracker : MonoBehaviour
     private void UpdateDay(int val)
     {
         currentCycle = dayText;
-        day.text = currentCycle+val.ToString();
+        day.text = currentCycle+val.ToString() + "/5";
     }
     private void UpdateNight(int val)
     {
          currentCycle = nightText;
-         day.text = currentCycle + val.ToString();
+         day.text = currentCycle + val.ToString() + "/5";
     }
     private void UpdateSus(int val)
     {
