@@ -14,6 +14,7 @@ public class EndManager : MonoBehaviour
     {
         if (GameManager.Instance.getSuspicion() >= 100)
         {
+            background.GetComponent<Animator>().Play("Police_Ending");
             gameEndText.text = "Oh No! You were too Suspicious!! The Police captured you! (Ending 1/3)";
         }
         else if (GameManager.Instance.getMoney() < 400)
