@@ -43,12 +43,13 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        VC.Add(new(VolumeType.MUSIC, 1, RuntimeManager.GetBus("bus:/Music")));
-        VC.Add(new(VolumeType.SFX, 1, RuntimeManager.GetBus("bus:/SFX")));
+        VC.Add(new(VolumeType.MUSIC, 0.5f, RuntimeManager.GetBus("bus:/Music")));
+        VC.Add(new(VolumeType.SFX, 0.5f, RuntimeManager.GetBus("bus:/SFX")));
 
         InitializeMusic();
     }
