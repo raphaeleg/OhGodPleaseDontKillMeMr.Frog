@@ -63,6 +63,7 @@ public class FMODEvents : MonoBehaviour
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
         SubscribedEvents = new() {
                 { "DisguiseAnimal", SFX_DisguiseAnimal },
                 { "LoadNight", SFX_Night },

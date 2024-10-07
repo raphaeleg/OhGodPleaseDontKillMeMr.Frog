@@ -20,6 +20,7 @@ public class DayManager : MonoBehaviour
 
     [SerializeField] private GameObject animalDisplay;
     [SerializeField] private GameObject tornadoAnim;
+    [SerializeField] private GameObject spotlight;
     [SerializeField] private List<Animal> exoticAnimals;
 
     [Header("Animal Counter")]
@@ -160,7 +161,19 @@ public class DayManager : MonoBehaviour
     }
 
     #region Suspicious Behaviour
-    public void Tornado(int val) { tornadoAnim.SetActive(true); }
+    public void Tornado(int val) 
+    { 
+        tornadoAnim.SetActive(true);
+        StartCoroutine("ActivateSpotlight");
+    }
+
+    private IEnumerator ActivateSpotlight()
+    {
+        yield return new WaitForSeconds(0.5f);
+        spotlight.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        spotlight.SetActive(false);
+    }
 
     public void DisguiseAnimal(int val)
     {

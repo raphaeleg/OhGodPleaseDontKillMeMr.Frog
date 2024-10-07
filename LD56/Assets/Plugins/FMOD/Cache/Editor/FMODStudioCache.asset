@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Animal SFX.bank
   Name: Animal SFX
   StudioPath: bank:/Animal SFX
-  lastModified: 638638799722811163
+  lastModified: 638639373965090534
   FileSizes:
   - Name: Desktop
     Value: 1301216
@@ -784,7 +784,7 @@ MonoBehaviour:
   - {fileID: 6186068008984957004}
   StringsBanks:
   - {fileID: 8930556861767406269}
-  cacheTime: 638638801596502038
+  cacheTime: 638639373965130542
   cacheVersion: 131619
 --- !u!114 &16496750258623650
 MonoBehaviour:
@@ -937,7 +937,7 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638638799723743148
+  lastModified: 638639373965130542
   FileSizes:
   - Name: Desktop
     Value: 408064
@@ -984,7 +984,7 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638638801596502038
+  lastModified: 638639228946998453
   FileSizes:
   - Name: Desktop
     Value: 4376768
@@ -1085,7 +1085,7 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638638792849200894
+  lastModified: 638639198427286524
   FileSizes:
   - Name: Desktop
     Value: 1340
@@ -1186,7 +1186,7 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638638792849220272
+  lastModified: 638639373965100478
   FileSizes:
   - Name: Desktop
     Value: 2628

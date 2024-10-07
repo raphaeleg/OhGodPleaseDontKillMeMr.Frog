@@ -15,13 +15,9 @@ public class NightManager : MonoBehaviour
 
     public void OnEnable()
     {
+        EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.NIGHT);
         exoticAnimalAnim.Play(inventory.requestAnimal.animal.GetSpeciesName());
         exoticAnimalText.text = "$" + inventory.requestAnimal.money;
-    }
-
-    private void Start()
-    {
-        EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.NIGHT);
     }
 
     public void StealAction()
