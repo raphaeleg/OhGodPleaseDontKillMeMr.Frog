@@ -10,10 +10,10 @@
 	</object>
 	<object class="ProjectSettings" id="{d356b4cc-354c-4b09-8594-ed3272f41df1}">
 		<property name="openWindows">
-			<value>Event Editor 1</value>
+			<value>Mixer 1</value>
 		</property>
 		<property name="windowLayout">
-			<value>AAAAAgAAACAAUAByAGUAcwBlAHQAIABCAHIAbwB3AHMAZQByACAAMQAAAEIB2dDLAAMAAAAAAp3///gdAAAELP//+wIAAAKd///4MwAABCz///sCAAAAAQAAAAAHgAAAAp3///gzAAAELP//+wIAAAAcAEUAdgBlAG4AdAAgAEUAZABpAHQAbwByACAAMQAAAEIB2dDLAAMAAAAAAAD////7AAAEXwAAApcAAADwAAAAXAAABL8AAAH/AAAAAAIAAAAEYAAAAAAAAAARAAAEXwAAApc=</value>
+			<value>AAAAAwAAACAAUAByAGUAcwBlAHQAIABCAHIAbwB3AHMAZQByACAAMQAAAEIB2dDLAAMAAAAAAp3///gdAAAELP//+wIAAAKd///4MwAABCz///sCAAAAAQAAAAAHgAAAAp3///gzAAAELP//+wIAAAAOAE0AaQB4AGUAcgAgADEAAABCAdnQywADAAD///+l///3iwAAByT///ujAAACJf//+KsAAAay///7egAAAAECAAAAB4D///+l///3oQAAByT///ujAAAAHABFAHYAZQBuAHQAIABFAGQAaQB0AG8AcgAgADEAAABCAdnQywADAAD///+l///3iwAAByT///ujAAABJP//+IwAAATz///6LwAAAAECAAAAB4D///+l///3oQAAByT///uj</value>
 		</property>
 		<relationship name="activePlatform">
 			<destination>{23cb0372-a024-4a12-99b5-482576eac103}</destination>

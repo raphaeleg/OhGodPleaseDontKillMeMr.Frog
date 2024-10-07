@@ -991,6 +991,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7391593644406555, guid: 25c238b24976ecd4d98f56b2dd2499e0, type: 3}
+      propertyPath: <Money>k__BackingField.Path
+      value: event:/SFX/money
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391593644406555, guid: 25c238b24976ecd4d98f56b2dd2499e0, type: 3}
+      propertyPath: <Money>k__BackingField.Guid.Data1
+      value: -1373701274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391593644406555, guid: 25c238b24976ecd4d98f56b2dd2499e0, type: 3}
+      propertyPath: <Money>k__BackingField.Guid.Data2
+      value: 1251142749
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391593644406555, guid: 25c238b24976ecd4d98f56b2dd2499e0, type: 3}
+      propertyPath: <Money>k__BackingField.Guid.Data3
+      value: -488031326
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391593644406555, guid: 25c238b24976ecd4d98f56b2dd2499e0, type: 3}
+      propertyPath: <Money>k__BackingField.Guid.Data4
+      value: 967912910
+      objectReference: {fileID: 0}
     - target: {fileID: 3295613286005301982, guid: 25c238b24976ecd4d98f56b2dd2499e0, type: 3}
       propertyPath: m_RootOrder
       value: 6
