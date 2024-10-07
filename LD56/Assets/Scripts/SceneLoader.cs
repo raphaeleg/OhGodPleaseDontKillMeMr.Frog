@@ -44,7 +44,8 @@ public class SceneLoader : MonoBehaviour
             { "StartMinigameFishing", LoadMinigameFishing },
             { "StartMinigameDino", LoadMinigameDino },
             { "LoadNight", LoadGameplayNight },
-            { "LoadEnd", LoadEnding }
+            { "LoadEnd", LoadEnding },
+            { "LoadMainMenu", LoadMainMenu },
         };
     }
     public void LoadScene()
@@ -58,7 +59,7 @@ public class SceneLoader : MonoBehaviour
         sceneAnimator.SetTrigger("Fade");
     }
 
-    public static void LoadMainMenu()
+    public static void LoadMainMenu(int val = 0)
     {
         Stat_Tracker.Instance.Reset();
         GameManager.Instance.StartGame();

@@ -31,6 +31,10 @@ public class OpeningCutscene : MonoBehaviour
         blackScreen.DOFade(0, duration);
         part1.SetActive(true);
 
+        var a = frog.transform.localPosition;
+        a.y = 270;
+        frog.transform.localPosition = a;
+
         frog.transform.DOMoveX(700, duration);
         yield return new WaitForSeconds(duration);
 
@@ -62,6 +66,6 @@ public class OpeningCutscene : MonoBehaviour
         part2.transform.DOScale(new Vector3(1.2f,1.2f,1.2f), 2.5f);
         yield return new WaitForSeconds(2);
 
-        SceneLoader.LoadMainMenu();
+        EventManager.TriggerEvent("LoadMainMenu");
     }
 }
