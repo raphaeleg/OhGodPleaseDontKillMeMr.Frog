@@ -78,7 +78,7 @@ public class Dino_MinigameManager : MonoBehaviour
     public void ResetTimer()
     {
         DeactivateTimerCoroutine();
-        timerSlider.value = 1;
+        timerSlider.value = 0;
         time = TIMER_SECONDS;
         activeCoroutine = "UpdateTimer";
         ActivateTimerCoroutine();
