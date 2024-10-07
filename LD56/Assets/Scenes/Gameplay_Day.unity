@@ -519,7 +519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Right... I can scroll/Drag to choose pets!
+  m_text: Right... I can Scroll/Drag to choose pets!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 10d0191ee63cc7f429e4c728dcb455c3, type: 2}
   m_sharedMaterial: {fileID: -1489011485752551352, guid: 10d0191ee63cc7f429e4c728dcb455c3, type: 2}
