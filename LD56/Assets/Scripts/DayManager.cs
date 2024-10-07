@@ -13,6 +13,7 @@ public class DayManager : MonoBehaviour
 
     private const float ENTER_DURATION = 1.0f;
     private const float DAILYSUS_DURATION = 2f;
+    private const float INSTRUCTION_DURATION = 5f;
     private bool isExoticRequest = false;
     private bool isServingCustomer = false;
 
@@ -22,6 +23,12 @@ public class DayManager : MonoBehaviour
     [SerializeField] private GameObject tornadoAnim;
     [SerializeField] private GameObject spotlight;
     [SerializeField] private List<Animal> exoticAnimals;
+
+    [Header("Instructions")]
+    [SerializeField] private GameObject scrollInstruction;
+    [SerializeField] private GameObject selectInstruction;
+    [SerializeField] private GameObject moneyInstruction;
+    [SerializeField] private GameObject suspicionInstruction;
 
     [Header("Animal Counter")]
     [SerializeField] private Transform counter;
@@ -77,6 +84,12 @@ public class DayManager : MonoBehaviour
 
     private IEnumerator StartLoop()
     {
+        if (inventory.day == 1)
+        {
+            StartCoroutine("InstructionsDayOne");
+            yield return new WaitForSeconds(9f);
+        }
+
         yield return new WaitForSeconds(1f);
 
         // If Not Day 0, Suspicious Person comes first
@@ -112,6 +125,26 @@ public class DayManager : MonoBehaviour
             yield return new WaitForSeconds(ENTER_DURATION);
             isServingCustomer = true;
         }
+    }
+
+    private IEnumerator InstructionsDayOne()
+    {
+        yield return new WaitForSeconds(1f);
+
+        scrollInstruction.SetActive(true);
+        yield return new WaitForSeconds(INSTRUCTION_DURATION);
+        scrollInstruction.SetActive(false);
+
+        selectInstruction.SetActive(true);
+        yield return new WaitForSeconds(INSTRUCTION_DURATION);
+        selectInstruction.SetActive(false);
+
+        moneyInstruction.SetActive(true);
+        suspicionInstruction.SetActive(true);
+        yield return new WaitForSeconds(INSTRUCTION_DURATION);
+        yield return new WaitForSeconds(INSTRUCTION_DURATION);
+        moneyInstruction.SetActive(false);
+        suspicionInstruction.SetActive(false);
     }
 
     private void CallRandomCustomer()
