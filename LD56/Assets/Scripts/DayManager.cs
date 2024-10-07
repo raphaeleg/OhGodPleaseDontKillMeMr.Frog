@@ -11,8 +11,8 @@ public class DayManager : MonoBehaviour
     private const int CUSTOMER_PER_DAY = 3;
     private int customerTracker = 0;
 
-    private const float ENTER_DURATION = 1.5f;
-    private const float DAILYSUS_DURATION = 3f;
+    private const float ENTER_DURATION = 1.0f;
+    private const float DAILYSUS_DURATION = 2f;
     private bool isExoticRequest = false;
     private bool isServingCustomer = false;
 
