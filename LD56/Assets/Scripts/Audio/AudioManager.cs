@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
-    
     public EventInstance musicEventInstance;
-
-
+    private List<EventInstance> eventInstances = new();
 
     public static AudioManager instance { get; private set; }
 
@@ -22,18 +21,22 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }   
 
-
-
     public void Start()
     {
             InitializeMusic(FMODEvents.instance.music);
     }
 
-
-
     public void InitializeMusic(EventReference musicEventReference)
     {
-        musicEventInstance = CreateInstance(musicEventReference);
+        musicEventInstance = CreateEventInstance(musicEventReference);
         musicEventInstance.start();
+    }
+
+    public EventInstance CreateEventInstance(EventReference eventRef, bool isGameEvent = false)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventRef);
+        eventInstances.Add(eventInstance); 
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        return eventInstance;
     }
 }
