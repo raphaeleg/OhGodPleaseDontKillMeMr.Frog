@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         suspicion = 0;
         money = 0;
         inventory.Reset();
-        Debug.Log(inventory.day);
+        Debug.Log("Reset: "+inventory.day);
     }
 
     private void AddDay(int val) {

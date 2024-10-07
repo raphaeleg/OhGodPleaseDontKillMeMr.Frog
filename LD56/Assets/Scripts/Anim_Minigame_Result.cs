@@ -12,7 +12,7 @@ public class Minigame_ResultAnimation : MonoBehaviour
     {
         if (result == Result.WIN)
         {
-            gameObject.GetComponent<Animator>().Play(inventory.currentAnimals[inventory.NORMAL_COUNT].GetSpeciesName());
+            gameObject.GetComponent<Animator>().Play(inventory.currentAnimals[inventory.currentAnimals.Count-1].GetSpeciesName());
             gameObject.transform.localScale = Vector3.zero;
             transform.DOScale(Vector3.one, 1).SetEase(Ease.InOutSine);
         }

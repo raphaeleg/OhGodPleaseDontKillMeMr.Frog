@@ -60,6 +60,7 @@ public class SceneLoader : MonoBehaviour
 
     public static void LoadMainMenu()
     {
+        GameManager.Instance.StartGame();
         FadeLevel("MainMenu");
     }
 
