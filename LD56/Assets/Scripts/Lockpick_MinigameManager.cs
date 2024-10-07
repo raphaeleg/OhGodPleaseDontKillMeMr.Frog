@@ -18,8 +18,6 @@ public class Lockpick_MinigameManager : MonoBehaviour
     [Header("Lives")]
     [SerializeField] private Transform livesContainer;
     [SerializeField] private GameObject crossPrefab;
-    [SerializeField] private Sprite activeCross;
-    [SerializeField] private Sprite deactiveCross;
     private List<GameObject> crosses = new();
 
     [Header("Timer")]
@@ -28,6 +26,8 @@ public class Lockpick_MinigameManager : MonoBehaviour
     [SerializeField] private Slider timerSlider;
     private string activeCoroutine = null;
 
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private Animator animalSprite;
     [SerializeField] private GameObject overlay;
     [SerializeField] private GameObject winOverlay;
     [SerializeField] private GameObject loseOverlay;
@@ -42,6 +42,7 @@ public class Lockpick_MinigameManager : MonoBehaviour
 
     private void Awake()
     {
+        animalSprite.Play(inventory.requestAnimal.animal.GetSpeciesName());
         SubscribedEvents = new() {
             { "LoseMinigameAttempt", LoseLife },
             { "WinMinigame", Win },
@@ -81,7 +82,7 @@ public class Lockpick_MinigameManager : MonoBehaviour
     {
         for (int i = 0; i < MAX_ATTEMPTS; i++)
         {
-            SetSprite(deactiveCross, i);
+            SetSprite(true, i);
         }
         lives = 0;
     }
@@ -107,16 +108,16 @@ public class Lockpick_MinigameManager : MonoBehaviour
         LoseGame();
     }
 
-    private void SetSprite(Sprite s, int index)
+    private void SetSprite(bool active, int index)
     {
         var currentLife = crosses[index];
-        currentLife.GetComponent<Image>().sprite = s;
+        currentLife.SetActive(active);
         crosses[index] = currentLife;
     }
 
     public void LoseLife(int val = 0)
     {
-        SetSprite(activeCross, lives);
+        SetSprite(false, lives);
         lives++;
 
         if (lives < MAX_ATTEMPTS)

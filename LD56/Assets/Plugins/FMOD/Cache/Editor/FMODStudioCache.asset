@@ -13,17 +13,46 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2055779821718739141}
-  - {fileID: 8877521899993658848}
-  EditorEvents: []
+  - {fileID: 8930556861767406269}
+  - {fileID: 6186068008984957004}
+  - {fileID: 4253566972323397600}
+  EditorEvents:
+  - {fileID: 380046768962832578}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8877521899993658848}
+  - {fileID: 6186068008984957004}
   StringsBanks:
-  - {fileID: 2055779821718739141}
-  cacheTime: 638636347689676575
+  - {fileID: 8930556861767406269}
+  cacheTime: 638638413483609288
   cacheVersion: 131619
---- !u!114 &2055779821718739141
+--- !u!114 &380046768962832578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Minigame Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Minigame Music
+  Guid:
+    Data1: 777237321
+    Data2: 1137255282
+    Data3: -1459791692
+    Data4: 288399511
+  Banks:
+  - {fileID: 4253566972323397600}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 61440
+--- !u!114 &4253566972323397600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33,17 +62,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/Minigames.bank
   m_EditorClassIdentifier: 
-  Path: ../FMOD/LD56/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638636347689676575
+  Path: ../FMOD/LD56/Build/Desktop/Minigames.bank
+  Name: Minigames
+  StudioPath: bank:/Minigames
+  lastModified: 638638413483609288
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 831168
   Exists: 1
---- !u!114 &8877521899993658848
+--- !u!114 &6186068008984957004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,8 +87,28 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638636347689631294
+  lastModified: 638638413465916255
   FileSizes:
   - Name: Desktop
     Value: 1036
+  Exists: 1
+--- !u!114 &8930556861767406269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/LD56/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638638413465936268
+  FileSizes:
+  - Name: Desktop
+    Value: 820
   Exists: 1
