@@ -75,4 +75,11 @@ public class Stat_Tracker : MonoBehaviour
     {
         money.text = "Money:    $" + val.ToString()+"/400";
     }
+
+    public void Reset()
+    {
+        money.text = "";
+        sus.text = "";
+        day.text = "";
+    }
 }
