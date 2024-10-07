@@ -111,9 +111,9 @@ public class Customer : MonoBehaviour
             // Visuals
             isCorrect = id == disguiseMappings[animalID];
         }
-        StartCoroutine(React(isCorrect));
+        StartCoroutine(React(isCorrect, id));
     }
-    private IEnumerator React(bool isCorrect)
+    private IEnumerator React(bool isCorrect, int id)
     {
         float duration = ENTER_DURATION;
         if (isSus)
@@ -125,7 +125,14 @@ public class Customer : MonoBehaviour
 
         if (isCorrect)
         {
-            EventManager.TriggerEvent("AddMoney", CORRECT_MONEY);
+            if (id < 4)
+            {
+                EventManager.TriggerEvent("AddMoney", 100 + 50 * (id));
+            }
+            else
+            {
+                EventManager.TriggerEvent("AddMoney", CORRECT_MONEY);
+            }
             PlayDialogueAnim("Emote_Correct");
         } else
         {
