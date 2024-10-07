@@ -11,10 +11,15 @@ public class DayManager : MonoBehaviour
     private const int CUSTOMER_PER_DAY = 3;
     private int customerTracker = 0;
 
-    private const float ENTER_DURATION = 1.0f;
+    private const float ENTER_DURATION = 1.5f;
+    private const float DAILYSUS_DURATION = 3f;
+    private bool isExoticRequest = false;
+    private bool isServingCustomer = false;
+
     [SerializeField] private Inventory inventory;
 
     [SerializeField] private GameObject animalDisplay;
+    [SerializeField] private GameObject tornadoAnim;
     [SerializeField] private List<Animal> exoticAnimals;
 
     [Header("Animal Counter")]
@@ -22,14 +27,15 @@ public class DayManager : MonoBehaviour
     [SerializeField] private GameObject animalPrefab;
 
     #region EventManager
-    private static GameManager Instance;    // Singleton
     private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
     {
         SubscribedEvents = new()
         {
-            { "Day_SelectAnimal", OnAnimalClick },
+            { "Day_SelectAnimal", ServeCustomer },
+            { "ChoseBluff", Tornado },
+            { "DisguiseAnimal", DisguiseAnimal },
         };
     }
     private void OnEnable()
@@ -70,63 +76,84 @@ public class DayManager : MonoBehaviour
     private IEnumerator StartLoop()
     {
         yield return new WaitForSeconds(1f);
-        customerTracker++;
-        EventManager.TriggerEvent("RandomCustomer");
+
+        // If Not Day 0, Suspicious Person comes first
+        isExoticRequest = inventory.day > 1;
+        if (isExoticRequest) {
+            CallSusCustomer();
+        }
+        else {  
+            CallRandomCustomer();
+        }
+        yield return new WaitForSeconds(ENTER_DURATION);
+        isServingCustomer = true;
     }
 
     private IEnumerator GameLoop()
     {
-        yield return new WaitForSeconds(2f);
         if (customerTracker >= CUSTOMER_PER_DAY) {
-            StartCoroutine("SuspiciousCustomer");
+            CallSusCustomer();
+            int id = inventory.day - 1;
+            inventory.requestAnimal = new Inventory.Request(exoticAnimals[id], 100 + 50 * (id));
+            yield return new WaitForSeconds(DAILYSUS_DURATION);
+            EventManager.TriggerEvent("NextDayCycle");
         } else {
-            customerTracker++;
-            EventManager.TriggerEvent("RandomCustomer");
+            CallRandomCustomer();
+            yield return new WaitForSeconds(ENTER_DURATION);
+            isServingCustomer = true;
         }
     }
 
-    public void OnAnimalClick(int id)
+    private void CallRandomCustomer()
     {
-        // Check if it's presenting to special request
-        // Check if it's a disguise pet
-        ServeCustomer(id);
+        customerTracker++;
+        EventManager.TriggerEvent("RandomCustomer");
+
+        if (isExoticRequest) { isExoticRequest = false; }
+    }
+    private void CallSusCustomer()
+    {
+        EventManager.TriggerEvent("SpecialCustomer", (isExoticRequest ? 0 : 1));
     }
 
-    private void ServeCustomer(int id)
+    public void ServeCustomer(int id)
     {
-        CustomerWait(id);
-        StartCoroutine("PlaceAnimal", id);
-    }
-
-    private void CustomerWait(int id)
-    {
+        if (!isServingCustomer) { return; }
         EventManager.TriggerEvent("PresentAnimal", id);
-
-        StartCoroutine(GameLoop());
+        StartCoroutine(PlaceAnimal(id, isExoticRequest ? DAILYSUS_DURATION : ENTER_DURATION));
+        isServingCustomer = false;
     }
 
-    private IEnumerator PlaceAnimal(int id)
+    private IEnumerator PlaceAnimal(int id, float duration)
     {
+        // Set Animation
         animalDisplay.SetActive(true);
         animalDisplay.GetComponent<Animator>().Play(inventory.GetName(id));
-
         var v = animalDisplay.transform.localPosition;
-        yield return new WaitForSeconds(ENTER_DURATION);
 
+        yield return new WaitForSeconds(duration);
+
+        // Going Home with New Owner
         animalDisplay.transform.DOMoveX(-1920 / 2, ENTER_DURATION);
 
         yield return new WaitForSeconds(ENTER_DURATION);
 
+        // Clean up
         animalDisplay.SetActive(false);
         animalDisplay.transform.localPosition = v;
+
+        StartCoroutine(GameLoop());
     }
 
-    private IEnumerator SuspiciousCustomer()
+    #region Suspicious Behaviour
+    public void Tornado(int val) { tornadoAnim.SetActive(true); }
+
+    public void DisguiseAnimal(int val)
     {
-        EventManager.TriggerEvent("SpecialCustomer");
-        inventory.requestAnimal = new Inventory.Request(exoticAnimals[inventory.day-1], 100 + 50*(inventory.day - 1));
-        yield return new WaitForSeconds(ENTER_DURATION/2);
-        Debug.Log("Reached Here");
-        EventManager.TriggerEvent("NextDayCycle");
+        Animator a = animalDisplay.GetComponent<Animator>();
+        // TODO: make sure each animal has D animation
+        string currentName = a.GetCurrentAnimatorClipInfo(0)[0].clip.name + "D";
+        a.Play(currentName);
     }
+    #endregion
 }

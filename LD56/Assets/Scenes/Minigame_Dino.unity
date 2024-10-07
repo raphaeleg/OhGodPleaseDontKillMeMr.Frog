@@ -174,14 +174,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 00b33e5b0be1e5e4cbdd81da41f08222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -438,8 +438,6 @@ MonoBehaviour:
   MAX_ATTEMPTS: 3
   livesContainer: {fileID: 902604591}
   crossPrefab: {fileID: 6055317623149584597, guid: 149afdaeff4c17649ba16411458f7faf, type: 3}
-  activeCross: {fileID: 21300000, guid: 8050f519a5ce2074fa87e4e99ff5f09d, type: 3}
-  deactiveCross: {fileID: 21300000, guid: 8050f519a5ce2074fa87e4e99ff5f09d, type: 3}
   timerSlider: {fileID: 1930670163}
   overlay: {fileID: 902604590}
   winOverlay: {fileID: 902604589}
@@ -1289,6 +1287,7 @@ GameObject:
   - component: {fileID: 1421553047}
   - component: {fileID: 1421553046}
   - component: {fileID: 1421553049}
+  - component: {fileID: 1421553050}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -1356,7 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1426,6 +1425,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!95 &1421553050
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421553044}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bbc0f102587ea89469be0996f79b8620, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1501610198
 GameObject:
   m_ObjectHideFlags: 0
