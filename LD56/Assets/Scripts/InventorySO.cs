@@ -37,7 +37,7 @@ public class Inventory : ScriptableObject {
     }
     public void GainExoticAnimal()
     {
-        currentAnimals.Add(requestAnimal.animal);
+        currentAnimals.Insert(0, requestAnimal.animal);
         requestAnimal.Clear();
     }
     public string GetName(int id)
