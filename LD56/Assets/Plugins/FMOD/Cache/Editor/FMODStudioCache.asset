@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5354890503393906562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Night Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Night Music
+  Guid:
+    Data1: -524591419
+    Data2: 1144943567
+    Data3: 1307992195
+    Data4: -415187899
+  Banks:
+  - {fileID: 5232151083520694669}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-831283218063792735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Day Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Day Music
+  Guid:
+    Data1: -1386555657
+    Data2: 1170632178
+    Data3: -1227380550
+    Data4: 1954752008
+  Banks:
+  - {fileID: 5232151083520694669}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,15 +69,17 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 8930556861767406269}
   - {fileID: 6186068008984957004}
-  - {fileID: 4253566972323397600}
+  - {fileID: 5232151083520694669}
   EditorEvents:
   - {fileID: 380046768962832578}
+  - {fileID: -5354890503393906562}
+  - {fileID: -831283218063792735}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6186068008984957004}
   StringsBanks:
   - {fileID: 8930556861767406269}
-  cacheTime: 638638413483609288
+  cacheTime: 638638504018455026
   cacheVersion: 131619
 --- !u!114 &380046768962832578
 MonoBehaviour:
@@ -44,7 +100,7 @@ MonoBehaviour:
     Data3: -1459791692
     Data4: 288399511
   Banks:
-  - {fileID: 4253566972323397600}
+  - {fileID: 5232151083520694669}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -52,7 +108,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 61440
---- !u!114 &4253566972323397600
+--- !u!114 &5232151083520694669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,15 +118,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Minigames.bank
+  m_Name: bank:/Music.bank
   m_EditorClassIdentifier: 
-  Path: ../FMOD/LD56/Build/Desktop/Minigames.bank
-  Name: Minigames
-  StudioPath: bank:/Minigames
-  lastModified: 638638413483609288
+  Path: ../FMOD/LD56/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638638504018455026
   FileSizes:
   - Name: Desktop
-    Value: 831168
+    Value: 832480
   Exists: 1
 --- !u!114 &6186068008984957004
 MonoBehaviour:
@@ -87,7 +143,7 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638638413465916255
+  lastModified: 638638504017863559
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -107,8 +163,8 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638638413465936268
+  lastModified: 638638504017887284
   FileSizes:
   - Name: Desktop
-    Value: 820
+    Value: 910
   Exists: 1

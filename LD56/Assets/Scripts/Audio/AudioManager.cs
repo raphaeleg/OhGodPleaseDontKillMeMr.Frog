@@ -6,7 +6,7 @@ using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
-    public EventInstance musicEventInstance;
+    private EventInstance musicEventInstance;
     private List<EventInstance> eventInstances = new();
 
     public static AudioManager instance { get; private set; }
@@ -21,12 +21,12 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }   
 
-    public void Start()
+    private void Start()
     {
             InitializeMusic(FMODEvents.instance.music);
     }
 
-    public void InitializeMusic(EventReference musicEventReference)
+    private void InitializeMusic(EventReference musicEventReference)
     {
         musicEventInstance = CreateEventInstance(musicEventReference);
         musicEventInstance.start();

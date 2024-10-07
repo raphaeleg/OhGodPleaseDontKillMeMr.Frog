@@ -7,6 +7,9 @@
 		<property name="dawProjectPath">
 			<value>C:/Users/Lydia/OneDrive - UBC/Documents/REAPER Media/LD56Music/LD56 day.rpp</value>
 		</property>
+		<property name="renderedAssetsPath">
+			<value>Day</value>
+		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{1b16b85c-6cdc-40d2-a96d-e98c467f66b2}</destination>
 		</relationship>
