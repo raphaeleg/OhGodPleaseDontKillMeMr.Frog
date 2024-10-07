@@ -82,6 +82,7 @@ public class Minigame_Dino : MonoBehaviour
 
     public void ResetAttempt() {
         isPaused = false;
+        obstacleSpeed = 500f;
         foreach (Transform child in obstacleSpawner.transform) {
             Destroy(child.gameObject);
             time = 0f;
@@ -95,8 +96,10 @@ public class Minigame_Dino : MonoBehaviour
         StopCoroutine("SpawnObstacle");
         StopCoroutine("UpdateTimer");
         isPaused = true;
+        obstacleSpeed = 0f;
         foreach (Transform child in obstacleSpawner.transform) {
             Rigidbody2D rb = child.GetComponent<Rigidbody2D>();
+            Debug.Log("Pasued Game");
             rb.velocity = new Vector2(0, 0);
         }
         playerRb.velocity = new Vector2(0, 0);
