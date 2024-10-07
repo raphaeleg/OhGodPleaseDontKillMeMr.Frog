@@ -650,8 +650,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1295, y: 162}
-  m_SizeDelta: {x: 537.3309, y: 560.2934}
+  m_AnchoredPosition: {x: -1595.19, y: 165}
+  m_SizeDelta: {x: 959.7213, y: 560.2934}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &618531932
 MonoBehaviour:
@@ -666,9 +666,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: b41c99415b13d9e41ba9b5e12c3e6c4d, type: 2}
-  Lily: {fileID: 2062141167}
+  characterSprite: {fileID: 2062141166}
   cyclelength: 2
   dialogueBox: {fileID: 1648546582}
+  CharacterAnimNames:
+  - Catboy
+  - GrannyGoat
+  - MouseGirl
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1182,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648546582}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1189,7 +1193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -251, y: 134}
+  m_AnchoredPosition: {x: -332, y: 147.77701}
   m_SizeDelta: {x: 317.2434, y: 291.2137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648546584
@@ -1438,6 +1442,7 @@ GameObject:
   - component: {fileID: 2062141167}
   - component: {fileID: 2062141171}
   - component: {fileID: 2062141170}
+  - component: {fileID: 2062141172}
   m_Layer: 5
   m_Name: Lily
   m_TagString: Untagged
@@ -1452,7 +1457,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062141166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 0}
   m_ConstrainProportionsScale: 0
@@ -1462,8 +1467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 84, y: -14}
-  m_SizeDelta: {x: 320, y: 180}
+  m_AnchoredPosition: {x: 74, y: 106}
+  m_SizeDelta: {x: 320, y: 207.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2062141170
 MonoBehaviour:
@@ -1485,9 +1490,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bef2ba0efc263d04e833c4e901d036ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d064776d624c944ab2f4d1d8d70cc1b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1503,6 +1508,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062141166}
   m_CullTransparentMesh: 1
+--- !u!95 &2062141172
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062141166}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0bb250600872bd43bc3e200a180198d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2080498915
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class NightManager : MonoBehaviour
     public void OnEnable()
     {
         exoticAnimalAnim.Play(inventory.requestAnimal.animal.GetSpeciesName());
-        exoticAnimalText.text = "Reward: $" + inventory.requestAnimal.money;
+        exoticAnimalText.text = "$" + inventory.requestAnimal.money;
     }
 
     public void StealAction()

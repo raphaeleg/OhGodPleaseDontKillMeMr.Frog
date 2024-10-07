@@ -2,7 +2,6 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Customer : MonoBehaviour
@@ -13,10 +12,13 @@ public class Customer : MonoBehaviour
     private int animalID = 0;
     [SerializeField] private Inventory inventory;
 
-    private const float ENTER_DURATION = 2.0f;
-    [SerializeField] private Transform Lily;
+    private const float ENTER_DURATION = 1.0f;
+    [SerializeField] private GameObject characterSprite;
     [SerializeField] private float cyclelength = 2;
     [SerializeField] private GameObject dialogueBox;
+
+    [SerializeField] private List<string> CharacterAnimNames = new();
+    private const string SuspiciousAnimName = "Suspicious";
 
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -54,6 +56,8 @@ public class Customer : MonoBehaviour
 
     private void Generate(int val = 0)
     {
+        string randChar = CharacterAnimNames[UnityEngine.Random.Range(0, CharacterAnimNames.Count)];
+        characterSprite.GetComponent<Animator>().Play(randChar);
         animalID = UnityEngine.Random.Range(inventory.EXOTIC_COUNT, inventory.NORMAL_COUNT + inventory.EXOTIC_COUNT);
         StartCoroutine(CharacterAnimation());
     }
@@ -61,6 +65,7 @@ public class Customer : MonoBehaviour
     private void GenerateSpecial(int val)
     {
         animalID = inventory.day-1;
+        characterSprite.GetComponent<Animator>().Play(SuspiciousAnimName);
         StartCoroutine(CharacterAnimation());
     }
 
@@ -80,7 +85,7 @@ public class Customer : MonoBehaviour
     }
     private void CharacterEnter()
     {
-        transform.DOMoveX(1300, ENTER_DURATION);
+        transform.DOMoveX(1920 / 2, ENTER_DURATION);
         //Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 
@@ -98,7 +103,7 @@ public class Customer : MonoBehaviour
 
         dialogueBox.SetActive(false);
 
-        transform.DOMoveX(-1300, ENTER_DURATION);
-        Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        transform.DOMoveX(-1920/2, ENTER_DURATION);
+        //Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 }

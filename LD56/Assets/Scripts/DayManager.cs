@@ -9,6 +9,8 @@ public class DayManager : MonoBehaviour
 {
     private const int CUSTOMER_PER_DAY = 3;
     private int customerTracker = 0;
+
+    private const float ENTER_DURATION = 1.0f;
     [SerializeField] private Inventory inventory;
 
     [SerializeField] private GameObject animalDisplay;
@@ -115,7 +117,7 @@ public class DayManager : MonoBehaviour
     {
         EventManager.TriggerEvent("SpecialCustomer");
         inventory.requestAnimal = new Inventory.Request(exoticAnimals[inventory.day-1], 100 + 50*(inventory.day - 1));
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(ENTER_DURATION/2);
         Debug.Log("Reached Here");
         EventManager.TriggerEvent("NextDayCycle");
     }
