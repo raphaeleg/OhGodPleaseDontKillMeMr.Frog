@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWAsset" id="{072e0974-f5d9-489b-bfc6-077b61dcf5b1}">
+		<property name="assetPath">
+			<value>LD56 sfx2.rpp.link/Page crumble.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.88331065759637184</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1b16b85c-6cdc-40d2-a96d-e98c467f66b2}</destination>
+		</relationship>
+		<relationship name="project">
+			<destination>{10fc9b84-60c5-4e9b-b3f9-3d0a4923d318}</destination>
+		</relationship>
+	</object>
+</objects>

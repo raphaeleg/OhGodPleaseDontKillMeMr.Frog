@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWAsset" id="{4f453f15-4674-4277-8f18-4bafaba32b04}">
+		<property name="assetPath">
+			<value>LD56 ideas.rpp.link/Dog2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5373015873015874</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1b16b85c-6cdc-40d2-a96d-e98c467f66b2}</destination>
+		</relationship>
+		<relationship name="project">
+			<destination>{02f57d96-e312-4489-9f75-dd1c1f5d9d3f}</destination>
+		</relationship>
+	</object>
+</objects>
