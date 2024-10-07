@@ -94,7 +94,6 @@ public class DayManager : MonoBehaviour
         if (customerTracker >= CUSTOMER_PER_DAY) {
             CallSusCustomer();
             int id = inventory.day - 1;
-            if (isExoticRequest) { id--; }
             inventory.requestAnimal = new Inventory.Request(exoticAnimals[id], 100 + 50 * (id));
             yield return new WaitForSeconds(DAILYSUS_DURATION);
             EventManager.TriggerEvent("NextDayCycle");

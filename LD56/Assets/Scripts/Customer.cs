@@ -78,6 +78,7 @@ public class Customer : MonoBehaviour
     {
         isSus = true;
         animalID = inventory.day-1;
+        if (val == 0) { animalID--; }
         characterSprite.GetComponent<Animator>().Play(SuspiciousAnimName);
         StartCoroutine(CharacterAnimation(val));
     }
