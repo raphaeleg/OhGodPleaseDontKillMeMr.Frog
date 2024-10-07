@@ -60,6 +60,7 @@ public class SceneLoader : MonoBehaviour
 
     public static void LoadMainMenu()
     {
+        Stat_Tracker.Instance.Reset();
         GameManager.Instance.StartGame();
         FadeLevel("MainMenu");
     }
@@ -97,6 +98,7 @@ public class SceneLoader : MonoBehaviour
 
     public static void LoadEnding(int index = 0)
     {
+        Stat_Tracker.Instance.Reset();
         FadeLevel("Gameplay_Ending");
     }
 

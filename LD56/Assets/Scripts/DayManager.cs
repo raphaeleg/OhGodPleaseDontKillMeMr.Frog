@@ -80,6 +80,9 @@ public class DayManager : MonoBehaviour
             a.GetComponent<Day_AnimalOption>().animal = animal;
             a.GetComponent<Animator>().Play(animal.GetSpeciesName());
         }
+        EventManager.TriggerEvent("UpdateTextDay", inventory.day);
+        EventManager.TriggerEvent("UpdateTextSus", GameManager.Instance.getSuspicion());
+        EventManager.TriggerEvent("UpdateTextMoney", GameManager.Instance.getMoney());
         StartCoroutine(StartLoop());
     }
 
