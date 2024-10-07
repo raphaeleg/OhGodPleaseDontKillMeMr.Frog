@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +32,7 @@ public class Lockpick_MinigameManager : MonoBehaviour
     [SerializeField] private GameObject overlay;
     [SerializeField] private GameObject winOverlay;
     [SerializeField] private GameObject loseOverlay;
+    [SerializeField] private GameObject instructions;
 
     [SerializeField] private Image digitalLock;
     private Vector2 startpos;
@@ -77,6 +79,11 @@ public class Lockpick_MinigameManager : MonoBehaviour
         }
     }
     #endregion
+
+    private void Start()
+    {
+        StartCoroutine("SetInstructions");
+    }
 
     private void Reset()
     {
@@ -171,5 +178,12 @@ public class Lockpick_MinigameManager : MonoBehaviour
         }
         activeCoroutine = "UpdateTimer";
         StartCoroutine(activeCoroutine);
+    }
+
+    private IEnumerator SetInstructions()
+    {
+        instructions.SetActive(true);
+        yield return new WaitForSeconds(10f);
+        instructions.SetActive(false);
     }
 }

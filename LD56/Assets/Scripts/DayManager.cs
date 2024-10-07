@@ -11,8 +11,8 @@ public class DayManager : MonoBehaviour
     private const int CUSTOMER_PER_DAY = 3;
     private int customerTracker = 0;
 
-    private const float ENTER_DURATION = 1.5f;
-    private const float DAILYSUS_DURATION = 3f;
+    private const float ENTER_DURATION = 1.0f;
+    private const float DAILYSUS_DURATION = 2f;
     private bool isExoticRequest = false;
     private bool isServingCustomer = false;
 
@@ -150,6 +150,7 @@ public class DayManager : MonoBehaviour
 
     public void DisguiseAnimal(int val)
     {
+        Debug.Log("Change Anim");
         Animator a = animalDisplay.GetComponent<Animator>();
         // TODO: make sure each animal has D animation
         string currentName = a.GetCurrentAnimatorClipInfo(0)[0].clip.name + "D";

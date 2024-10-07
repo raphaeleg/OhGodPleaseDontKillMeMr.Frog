@@ -306,7 +306,7 @@ RectTransform:
   - {fileID: 2763155655091700190}
   - {fileID: 643444290317757136}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Day 1
+  m_text: Day 1/5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 10d0191ee63cc7f429e4c728dcb455c3, type: 2}
   m_sharedMaterial: {fileID: -1489011485752551352, guid: 10d0191ee63cc7f429e4c728dcb455c3, type: 2}

@@ -16,9 +16,14 @@ public class Minigame_Lockpick : MonoBehaviour
     private string[] words = { "BOWLS", "FETCH", "TREAT", "LEASH", "SNACK" };
     private string guessWord;
 
-    private void Awake()
+    private void Start()
     {
         guessWord = words[Random.Range(0, words.Length)];   // Choosing random word from list
+        AutoSelect();
+    }
+    private void AutoSelect()
+    {
+        guessInput.ActivateInputField();
     }
 
     // Update is called once per frame
@@ -119,6 +124,7 @@ public class Minigame_Lockpick : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         guessInput.text = string.Empty;
+        AutoSelect();
     }
     private void Win()
     {
