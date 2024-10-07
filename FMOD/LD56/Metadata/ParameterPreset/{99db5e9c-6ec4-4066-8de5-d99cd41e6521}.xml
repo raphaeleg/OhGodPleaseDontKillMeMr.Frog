@@ -22,7 +22,7 @@
 			<value>Day</value>
 			<value>Night</value>
 			<value>Fishing</value>
-			<value>Dino, Lockpick</value>
+			<value>Otherminigames</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
