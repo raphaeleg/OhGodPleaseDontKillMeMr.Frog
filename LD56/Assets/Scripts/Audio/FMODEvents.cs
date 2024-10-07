@@ -29,6 +29,12 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference MinigameLockBeep { get; private set; }
     [field: SerializeField] public EventReference Money { get; private set; }
     [field: SerializeField] public EventReference MinigameFail { get; private set; }
+    [field: SerializeField] public EventReference Foliage { get; private set; }
+    [field: SerializeField] public EventReference CustomerCat { get; private set; }
+    [field: SerializeField] public EventReference CustomerMouse { get; private set; }
+    [field: SerializeField] public EventReference CustomerGoat { get; private set; }
+    [field: SerializeField] public EventReference CustomerSus { get; private set; }
+    [field: SerializeField] public EventReference FrogMafia { get; private set; }
 
     [field: Header("Disguised Animals")]
     [field: SerializeField] public EventReference DSnake { get; private set; }

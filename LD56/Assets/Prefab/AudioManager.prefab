@@ -130,11 +130,11 @@ MonoBehaviour:
     Path: event:/SFX/minigame SFX/Beeps
   <Money>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1373701274
+      Data2: 1251142749
+      Data3: -488031326
+      Data4: 967912910
+    Path: event:/SFX/money
   <MinigameFail>k__BackingField:
     Guid:
       Data1: -769503349
@@ -142,6 +142,48 @@ MonoBehaviour:
       Data3: -506034552
       Data4: 949389387
     Path: event:/SFX/minigame SFX/Incorrect
+  <Foliage>k__BackingField:
+    Guid:
+      Data1: -957429940
+      Data2: 1299608588
+      Data3: -1467115895
+      Data4: -1180286174
+    Path: event:/SFX/minigame SFX/Foliage
+  <CustomerCat>k__BackingField:
+    Guid:
+      Data1: 2083889190
+      Data2: 1260562729
+      Data3: -2038587227
+      Data4: -511273857
+    Path: event:/SFX/Customer SFX/Customer Cat
+  <CustomerMouse>k__BackingField:
+    Guid:
+      Data1: -1725086139
+      Data2: 1264616102
+      Data3: -2067853919
+      Data4: 598222670
+    Path: event:/SFX/Customer SFX/Customer Mouse
+  <CustomerGoat>k__BackingField:
+    Guid:
+      Data1: 1524528002
+      Data2: 1268471288
+      Data3: 807343511
+      Data4: -1611913547
+    Path: event:/SFX/Customer SFX/Customer Goat
+  <CustomerSus>k__BackingField:
+    Guid:
+      Data1: 1956035372
+      Data2: 1336165303
+      Data3: -640987230
+      Data4: 1396109842
+    Path: event:/SFX/Customer SFX/Customer Sus
+  <FrogMafia>k__BackingField:
+    Guid:
+      Data1: 259916497
+      Data2: 1251719539
+      Data3: 321079427
+      Data4: -1876782707
+    Path: event:/SFX/Customer SFX/Frog Mafia
   <DSnake>k__BackingField:
     Guid:
       Data1: 1441384628
