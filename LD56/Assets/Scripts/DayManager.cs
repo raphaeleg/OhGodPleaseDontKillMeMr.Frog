@@ -29,6 +29,7 @@ public class DayManager : MonoBehaviour
     [SerializeField] private GameObject selectInstruction;
     [SerializeField] private GameObject moneyInstruction;
     [SerializeField] private GameObject suspicionInstruction;
+    [SerializeField] private GameObject bluffInstruction;
 
     [Header("Animal Counter")]
     [SerializeField] private Transform counter;
@@ -87,7 +88,13 @@ public class DayManager : MonoBehaviour
         if (inventory.day == 1)
         {
             StartCoroutine("InstructionsDayOne");
-            yield return new WaitForSeconds(9f);
+            yield return new WaitForSeconds(5f);
+        }
+
+        if (inventory.day == 2)
+        {
+            StartCoroutine("InstructionsDayTwo");
+            yield return new WaitForSeconds(3f);
         }
 
         yield return new WaitForSeconds(1f);
@@ -145,6 +152,14 @@ public class DayManager : MonoBehaviour
         yield return new WaitForSeconds(INSTRUCTION_DURATION);
         moneyInstruction.SetActive(false);
         suspicionInstruction.SetActive(false);
+    }
+
+    private IEnumerator InstructionsDayTwo()
+    {
+        yield return new WaitForSeconds(1f);
+        bluffInstruction.SetActive(true);
+        yield return new WaitForSeconds(INSTRUCTION_DURATION);
+        bluffInstruction.SetActive(false);
     }
 
     private void CallRandomCustomer()
