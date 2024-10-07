@@ -34,7 +34,6 @@ public class Dino_MinigameManager : MonoBehaviour
     {
         SubscribedEvents = new() {
             { "LoseMinigameAttempt", LoseLife },
-            { "WinMinigame", Win },
         };
     }
     private void OnEnable()
@@ -122,6 +121,8 @@ public class Dino_MinigameManager : MonoBehaviour
 
     public void Win(int val = 0)
     {
+        EventManager.TriggerEvent("WinMinigame");
+
         DeactivateTimerCoroutine();
 
         winOverlay.SetActive(true);
