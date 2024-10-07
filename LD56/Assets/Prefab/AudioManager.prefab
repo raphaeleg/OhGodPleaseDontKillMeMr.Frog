@@ -46,88 +46,88 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <BG>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1258443530
+      Data2: 1259039919
+      Data3: 1823158712
+      Data4: -2004541812
+    Path: event:/Music/Music
   <DisguiseAnimal>k__BackingField:
     Guid:
-      Data1: 332865738
-      Data2: 1185295891
-      Data3: -1913033576
-      Data4: 691184395
-    Path: event:/SFX/Disguised animal SFX/D.Bird
+      Data1: 1611079016
+      Data2: 1180384829
+      Data3: -952423780
+      Data4: -1920776360
+    Path: event:/SFX/Disguising Animal
   <MoralityUp>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1503431695
+      Data2: 1283939053
+      Data3: -1947425104
+      Data4: -1811372345
+    Path: event:/SFX/Plus morality
   <MoralityDown>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 596377349
+      Data2: 1302680193
+      Data3: 1239185578
+      Data4: 1729379350
+    Path: event:/SFX/minus morality
   <CloseShop>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1224136755
+      Data2: 1121113856
+      Data3: -910202464
+      Data4: -537825481
+    Path: event:/SFX/Store Close
   <OpenShop>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1111301019
+      Data2: 1130682249
+      Data3: -1645024372
+      Data4: -1140280240
+    Path: event:/SFX/Store Open
   <PageFlip>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -133549458
+      Data2: 1181570190
+      Data3: 1989770673
+      Data4: 424501722
+    Path: event:/SFX/Page Turn
   <PageCrumble>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -327300100
+      Data2: 1199977774
+      Data3: 409117095
+      Data4: 2097534900
+    Path: event:/SFX/Page Crumble
   <MinigameCorrect>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1348407871
+      Data2: 1327420905
+      Data3: -1877227376
+      Data4: -519657534
+    Path: event:/SFX/minigame SFX/Correct
   <MinigameIncorrect>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -769503349
+      Data2: 1288627968
+      Data3: -506034552
+      Data4: 949389387
+    Path: event:/SFX/minigame SFX/Incorrect
   <Kettle>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -627132131
+      Data2: 1125627591
+      Data3: 622210714
+      Data4: 463068990
+    Path: event:/SFX/minigame SFX/Kettle
   <MinigameLockBeep>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1271899168
+      Data2: 1251882716
+      Data3: 461728911
+      Data4: 536325881
+    Path: event:/SFX/minigame SFX/Beeps
   <Money>k__BackingField:
     Guid:
       Data1: 0
@@ -137,11 +137,11 @@ MonoBehaviour:
     Path: 
   <MinigameFail>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -769503349
+      Data2: 1288627968
+      Data3: -506034552
+      Data4: 949389387
+    Path: event:/SFX/minigame SFX/Incorrect
   <DSnake>k__BackingField:
     Guid:
       Data1: 1441384628
