@@ -9,7 +9,7 @@ public class UI_Button : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private bool isDark = false;
 
-    public void Start()
+    public void OnEnable()
     {
         if (isDark)
         {
