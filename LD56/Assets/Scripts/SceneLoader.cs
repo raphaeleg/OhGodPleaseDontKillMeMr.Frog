@@ -44,6 +44,7 @@ public class SceneLoader : MonoBehaviour
             { "StartMinigameFishing", LoadMinigameFishing },
             { "StartMinigameDino", LoadMinigameDino },
             { "LoadNight", LoadGameplayNight },
+            { "LoadEnd", LoadEnding }
         };
     }
     public void LoadScene()
@@ -93,7 +94,7 @@ public class SceneLoader : MonoBehaviour
         FadeLevel("Minigame_Dino");
     }
 
-    public static void LoadEnding()
+    public static void LoadEnding(int index = 0)
     {
         FadeLevel("Gameplay_Ending");
     }
