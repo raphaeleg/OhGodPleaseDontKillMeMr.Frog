@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{99db5e9c-6ec4-4066-8de5-d99cd41e6521}">
+		<property name="name">
+			<value>Music</value>
+		</property>
+		<relationship name="folder">
+			<destination>{dcd0cc44-c372-4e01-8a9e-7fd67f0cdd6d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d961e8c5-525a-4722-89f9-e929250f8ffa}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d961e8c5-525a-4722-89f9-e929250f8ffa}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Day</value>
+			<value>Night</value>
+			<value>Fishing</value>
+			<value>Dino, Lockpick</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

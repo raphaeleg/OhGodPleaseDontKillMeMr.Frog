@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5354890503393906562
+--- !u!114 &-8713224661733638198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,23 +10,367 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Night Music
+  m_Name: event:/SFX/Animal SFX/Cat
   m_EditorClassIdentifier: 
-  Path: event:/Music/Night Music
+  Path: event:/SFX/Animal SFX/Cat
   Guid:
-    Data1: -524591419
-    Data2: 1144943567
-    Data3: 1307992195
-    Data4: -415187899
+    Data1: -1427876136
+    Data2: 1103290483
+    Data3: 1984779914
+    Data4: 252532702
   Banks:
-  - {fileID: 5232151083520694669}
+  - {fileID: -8671781559434945320}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 364
+--- !u!114 &-8671781559434945320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Animal SFX.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/LD56/Build/Desktop/Animal SFX.bank
+  Name: Animal SFX
+  StudioPath: bank:/Animal SFX
+  lastModified: 638638635919375995
+  FileSizes:
+  - Name: Desktop
+    Value: 1372608
+  Exists: 1
+--- !u!114 &-8618263699229295572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Eagle
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Eagle
+  Guid:
+    Data1: 840722827
+    Data2: 1147797265
+    Data3: -486284874
+    Data4: 1350650944
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2600
+--- !u!114 &-8250791811263548917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Mouse
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Mouse
+  Guid:
+    Data1: 1360864429
+    Data2: 1088361909
+    Data3: -1383290207
+    Data4: 336484792
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-7692129830536533856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Disguised animal SFX/D.Cornsnake
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Disguised animal SFX/D.Cornsnake
+  Guid:
+    Data1: 1441384628
+    Data2: 1226960348
+    Data3: -1602898248
+    Data4: -8235093
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &-6831817767200999828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Disguised animal SFX/D.Cat
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Disguised animal SFX/D.Cat
+  Guid:
+    Data1: 1955935672
+    Data2: 1298718813
+    Data3: 1419756962
+    Data4: -2069073763
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3600
+--- !u!114 &-6457940891659075729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Disguised animal SFX/D.Bird
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Disguised animal SFX/D.Bird
+  Guid:
+    Data1: 332865738
+    Data2: 1185295891
+    Data3: -1913033576
+    Data4: 691184395
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 640
+--- !u!114 &-6174357278890042949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Turtle
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Turtle
+  Guid:
+    Data1: -22554165
+    Data2: 1298412438
+    Data3: 379601578
+    Data4: -2016350348
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4950
+--- !u!114 &-5161826719245214318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Cornsnake
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Cornsnake
+  Guid:
+    Data1: -663438426
+    Data2: 1317336528
+    Data3: -1854665564
+    Data4: 1577830200
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2200
+--- !u!114 &-4659121363593263794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Tiger
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Tiger
+  Guid:
+    Data1: -29245839
+    Data2: 1144500359
+    Data3: -819071553
+    Data4: -1804748717
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &-4526993863084717588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Hippo
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Hippo
+  Guid:
+    Data1: 1650367938
+    Data2: 1102008438
+    Data3: -1876865872
+    Data4: -1246045694
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2900
+--- !u!114 &-3067156649979776381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Dog
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Dog
+  Guid:
+    Data1: -1500981584
+    Data2: 1264313014
+    Data3: 2067227792
+    Data4: 1214783238
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1680
+--- !u!114 &-2213801331541056993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Bird
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Bird
+  Guid:
+    Data1: 1811345218
+    Data2: 1076730248
+    Data3: -1735705697
+    Data4: -1999217650
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4500
+--- !u!114 &-1907471139663581131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Disguised animal SFX/D.Fish
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Disguised animal SFX/D.Fish
+  Guid:
+    Data1: 28851535
+    Data2: 1285517922
+    Data3: 1197403810
+    Data4: -742091205
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1300
 --- !u!114 &-831283218063792735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,13 +391,13 @@ MonoBehaviour:
     Data4: 1954752008
   Banks:
   - {fileID: 5232151083520694669}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 44369
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,18 +414,35 @@ MonoBehaviour:
   - {fileID: 8930556861767406269}
   - {fileID: 6186068008984957004}
   - {fileID: 5232151083520694669}
+  - {fileID: -8671781559434945320}
   EditorEvents:
-  - {fileID: 380046768962832578}
-  - {fileID: -5354890503393906562}
   - {fileID: -831283218063792735}
+  - {fileID: 4637654481030573467}
+  - {fileID: 5669456440323294820}
+  - {fileID: -2213801331541056993}
+  - {fileID: -1907471139663581131}
+  - {fileID: -4659121363593263794}
+  - {fileID: 6866219318760755846}
+  - {fileID: -8618263699229295572}
+  - {fileID: 16496750258623650}
+  - {fileID: -5161826719245214318}
+  - {fileID: -8250791811263548917}
+  - {fileID: -3067156649979776381}
+  - {fileID: -7692129830536533856}
+  - {fileID: -6831817767200999828}
+  - {fileID: 6675526058058849599}
+  - {fileID: -4526993863084717588}
+  - {fileID: -6457940891659075729}
+  - {fileID: -6174357278890042949}
+  - {fileID: -8713224661733638198}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6186068008984957004}
   StringsBanks:
   - {fileID: 8930556861767406269}
-  cacheTime: 638638504018455026
+  cacheTime: 638638635919375995
   cacheVersion: 131619
---- !u!114 &380046768962832578
+--- !u!114 &16496750258623650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,23 +452,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Minigame Music
+  m_Name: event:/SFX/Animal SFX/Rabbit
   m_EditorClassIdentifier: 
-  Path: event:/Music/Minigame Music
+  Path: event:/SFX/Animal SFX/Rabbit
   Guid:
-    Data1: 777237321
-    Data2: 1137255282
-    Data3: -1459791692
-    Data4: 288399511
+    Data1: -60223332
+    Data2: 1220715283
+    Data3: 587022469
+    Data4: 1333919474
   Banks:
-  - {fileID: 5232151083520694669}
-  IsStream: 1
+  - {fileID: -8671781559434945320}
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 61440
+  Length: 2950
+--- !u!114 &4637654481030573467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Fish
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Fish
+  Guid:
+    Data1: -671707130
+    Data2: 1222119579
+    Data3: -119064191
+    Data4: -1303137272
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &5232151083520694669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,11 +511,38 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638638504018455026
+  lastModified: 638638635914073821
   FileSizes:
   - Name: Desktop
-    Value: 832480
+    Value: 2898912
   Exists: 1
+--- !u!114 &5669456440323294820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Shark
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Shark
+  Guid:
+    Data1: 183329056
+    Data2: 1318985182
+    Data3: 853582517
+    Data4: -1753586441
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1260
 --- !u!114 &6186068008984957004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,11 +558,65 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638638504017863559
+  lastModified: 638638635912712814
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &6675526058058849599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Cobra
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Cobra
+  Guid:
+    Data1: -2021258309
+    Data2: 1122242186
+    Data3: -1032874877
+    Data4: 135175935
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1650
+--- !u!114 &6866219318760755846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Animal SFX/Ferret
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Animal SFX/Ferret
+  Guid:
+    Data1: -1909404042
+    Data2: 1099031091
+    Data3: -1985719110
+    Data4: -1768061481
+  Banks:
+  - {fileID: -8671781559434945320}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1200
 --- !u!114 &8930556861767406269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,8 +632,8 @@ MonoBehaviour:
   Path: ../FMOD/LD56/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638638504017887284
+  lastModified: 638638635912737982
   FileSizes:
   - Name: Desktop
-    Value: 910
+    Value: 1700
   Exists: 1

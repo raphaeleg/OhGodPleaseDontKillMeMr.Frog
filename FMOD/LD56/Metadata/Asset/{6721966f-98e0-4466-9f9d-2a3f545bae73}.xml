@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{6721966f-98e0-4466-9f9d-2a3f545bae73}">
+		<property name="assetPath">
+			<value>LD56 night.rpp.link/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1b16b85c-6cdc-40d2-a96d-e98c467f66b2}</destination>
+		</relationship>
+	</object>
+</objects>
