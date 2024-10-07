@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private const int MAX_SUSPICION = 100;
     [SerializeField] private int suspicion = 0;
 
-    [SerializeField] private int money = 50;
+    [SerializeField] private int money = 0;
 
     #region EventManager
     public static GameManager Instance;    // Singleton
@@ -78,26 +78,35 @@ public class GameManager : MonoBehaviour
         ToggleCycle();
         inventory.day++;
         inventory.requestAnimal.Clear();
+        EventManager.TriggerEvent("UpdateTextDay", inventory.day);
     }
     private void ToggleCycle(int val = 0) {
         if (cycle == DayCycle.DAY) { 
             cycle = DayCycle.NIGHT;
-            EventManager.TriggerEvent("LoadNight");
+            EventManager.TriggerEvent("LoadNight", inventory.day);
         }
         else { cycle = DayCycle.DAY; }
     }
     private void AddSuspicion(int val)
     {
         suspicion += val;
+        EventManager.TriggerEvent("UpdateTextSus", suspicion);
         if (suspicion >= MAX_SUSPICION)
         {
             // TODO: Lose condition
         }
     }
-    private void SubtractSuspicion(int val) { suspicion -= 10; }    // only way to subtract is by selling normal animals
-    private void AddMoney(int val) { money += val; }
+    private void SubtractSuspicion(int val) {
+        suspicion -= 10;
+        EventManager.TriggerEvent("UpdateTextSus", suspicion);
+    }
+    private void AddMoney(int val) {
+        money += val; 
+        EventManager.TriggerEvent("UpdateTextMoney", money);
+    }
     private void SubtractMoney(int val) { 
-        money -= val; 
+        money -= val;
+        EventManager.TriggerEvent("UpdateTextMoney", money);
         if (money < 0)
         {
             // TODO: Lose condition
