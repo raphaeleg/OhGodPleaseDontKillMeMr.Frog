@@ -19,6 +19,11 @@ public class NightManager : MonoBehaviour
         exoticAnimalText.text = "$" + inventory.requestAnimal.money;
     }
 
+    private void Start()
+    {
+        EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.NIGHT);
+    }
+
     public void StealAction()
     {
         int day = inventory.day;

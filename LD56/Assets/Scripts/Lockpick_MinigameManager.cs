@@ -82,6 +82,7 @@ public class Lockpick_MinigameManager : MonoBehaviour
 
     private void Start()
     {
+        EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.MINIGAME);
         StartCoroutine("SetInstructions");
     }
 
@@ -140,6 +141,8 @@ public class Lockpick_MinigameManager : MonoBehaviour
     public void LoseGame()
     {
         DeactivateTimerCoroutine();
+
+        EventManager.TriggerEvent("LoseMinigame");
 
         loseOverlay.SetActive(true);
 

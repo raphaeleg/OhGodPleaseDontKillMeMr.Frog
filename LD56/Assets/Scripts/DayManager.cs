@@ -64,6 +64,7 @@ public class DayManager : MonoBehaviour
 
     private void Start()
     {
+        EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.DAY);
         foreach(Animal animal in inventory.currentAnimals)
         {
             var a = Instantiate(animalPrefab, counter);

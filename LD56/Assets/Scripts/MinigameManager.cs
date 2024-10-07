@@ -114,6 +114,7 @@ public class MinigameManager : MonoBehaviour
             overlay.SetActive(true);
             return;
         }
+        EventManager.TriggerEvent("LoseMinigame");
 
         loseOverlay.SetActive(true);
 

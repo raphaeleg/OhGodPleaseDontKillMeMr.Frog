@@ -20,6 +20,7 @@ public class Minigame_Dino : MonoBehaviour
     public float thrust = 500.0f;
 
     public void Start() {
+        EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.MINIGAME);
         playerRb = player.GetComponent<Rigidbody2D>();
         StartCoroutine(SpawnObstacle());
         StartCoroutine(UpdateTimer());
