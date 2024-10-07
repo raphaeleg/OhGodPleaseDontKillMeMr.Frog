@@ -92,11 +92,19 @@ public class DayManager : MonoBehaviour
     private IEnumerator GameLoop()
     {
         if (customerTracker >= CUSTOMER_PER_DAY) {
-            CallSusCustomer();
-            int id = inventory.day - 1;
-            inventory.requestAnimal = new Inventory.Request(exoticAnimals[id], 100 + 50 * (id));
-            yield return new WaitForSeconds(DAILYSUS_DURATION);
-            EventManager.TriggerEvent("NextDayCycle");
+            if (inventory.day < 5)
+            {
+                CallSusCustomer();
+                int id = inventory.day - 1;
+                inventory.requestAnimal = new Inventory.Request(exoticAnimals[id], 100 + 50 * (id));
+                yield return new WaitForSeconds(DAILYSUS_DURATION);
+                EventManager.TriggerEvent("NextDayCycle");
+            }
+            else
+            {
+                yield return new WaitForSeconds(DAILYSUS_DURATION);
+                EventManager.TriggerEvent("LoadEnd");
+            }
         } else {
             CallRandomCustomer();
             yield return new WaitForSeconds(ENTER_DURATION);

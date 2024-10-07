@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigame_Dino.unity
     guid: dd5f5114b51504f42abf16327f9da599
+  - enabled: 1
+    path: Assets/Scenes/Gameplay_Ending.unity
+    guid: 6fdcd70d17306c147bdcdbb851b347cd
   m_configObjects: {}
