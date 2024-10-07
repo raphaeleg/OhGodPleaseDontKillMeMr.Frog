@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using TMPro;
 
-public class UI_Button : MonoBehaviour, IPointerClickHandler
+public class UI_Button : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private bool isDark = false;
 
@@ -17,7 +17,7 @@ public class UI_Button : MonoBehaviour, IPointerClickHandler
             transform.GetChild(0).GetComponent<TMP_Text>().color = new(0,0,0,1);
         }
     }
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         transform.DOScale(10f, 0.5f);
         transform.DOScale(1f, 0.5f);
