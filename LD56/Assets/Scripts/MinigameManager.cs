@@ -15,8 +15,6 @@ public class MinigameManager : MonoBehaviour
     [Header("Lives")]
     [SerializeField] private Transform livesContainer;
     [SerializeField] private GameObject crossPrefab;
-    [SerializeField] private Sprite activeCross;
-    [SerializeField] private Sprite deactiveCross;
     private List<GameObject> crosses = new();
 
     [Header("Timer")]
@@ -72,7 +70,7 @@ public class MinigameManager : MonoBehaviour
     private void Reset()
     {
         for (int i = 0; i < MAX_ATTEMPTS; i++) {
-            SetSprite(deactiveCross, i);
+            SetSprite(true, i);
         }
         lives = 0;
     }
@@ -99,17 +97,17 @@ public class MinigameManager : MonoBehaviour
         EventManager.TriggerEvent("MinigameTimerDeplete");
     }
 
-    private void SetSprite(Sprite s, int index)
+    private void SetSprite(bool active, int index)
     {
         var currentLife = crosses[index];
-        currentLife.GetComponent<Image>().sprite = s;
+        currentLife.SetActive(active);
         crosses[index] = currentLife;
     }
 
     public void LoseLife(int val = 0)
     {
         DeactivateTimerCoroutine();
-        SetSprite(activeCross, lives);
+        SetSprite(false, lives);
         lives++;
 
         if (lives < MAX_ATTEMPTS) {

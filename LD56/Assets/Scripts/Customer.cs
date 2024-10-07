@@ -13,7 +13,7 @@ public class Customer : MonoBehaviour
     private int animalID = 0;
     [SerializeField] private Inventory inventory;
 
-    private const float ENTER_DURATION = 5.0f;
+    private const float ENTER_DURATION = 2.0f;
     [SerializeField] private Transform Lily;
     [SerializeField] private float cyclelength = 2;
     [SerializeField] private GameObject dialogueBox;
@@ -60,7 +60,7 @@ public class Customer : MonoBehaviour
 
     private void GenerateSpecial(int val)
     {
-        animalID = inventory.day;
+        animalID = inventory.day-1;
         StartCoroutine(CharacterAnimation());
     }
 
@@ -69,7 +69,14 @@ public class Customer : MonoBehaviour
         CharacterEnter();
         yield return new WaitForSeconds(ENTER_DURATION);
         dialogueBox.SetActive(true);
-        dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(inventory.GetName(animalID));
+        if (animalID > 3)
+        {
+            dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(inventory.GetName(animalID));
+        }
+        else
+        {
+            dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play("Envelope");
+        }
     }
     private void CharacterEnter()
     {
@@ -91,7 +98,6 @@ public class Customer : MonoBehaviour
 
         dialogueBox.SetActive(false);
 
-        // Trigger Leave Animation
         transform.DOMoveX(-1300, ENTER_DURATION);
         Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }

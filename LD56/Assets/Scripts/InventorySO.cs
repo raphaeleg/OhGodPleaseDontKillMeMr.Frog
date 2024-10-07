@@ -21,6 +21,8 @@ public class Inventory : ScriptableObject {
         }
     }
 
+    public List<Animal> allAnimals;
+    public List<Animal> baseAnimals;
     public List<Animal> currentAnimals;
     public int EXOTIC_COUNT = 4;
     public int NORMAL_COUNT = 10;
@@ -29,7 +31,7 @@ public class Inventory : ScriptableObject {
 
     public void Reset()
     {
-        currentAnimals.Clear();
+        currentAnimals = new List<Animal>(baseAnimals);
         requestAnimal.Clear();
         day = 0;
     }
@@ -40,7 +42,7 @@ public class Inventory : ScriptableObject {
     }
     public string GetName(int id)
     {
-        Animal a = currentAnimals.Find(item => item.id == id);
+        Animal a = allAnimals.Find(item => item.id == id);
         return a.GetSpeciesName();
     }
 }
