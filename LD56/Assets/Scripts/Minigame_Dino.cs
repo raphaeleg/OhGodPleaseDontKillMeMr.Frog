@@ -17,7 +17,7 @@ public class Minigame_Dino : MonoBehaviour
     private const float TIMER_SECONDS = 20f;
     private float time = 0f;
 
-    public float thrust = 100.0f;
+    public float thrust = 75.0f;
 
     private bool isPaused = false;
 
