@@ -150,6 +150,7 @@ public class DayManager : MonoBehaviour
 
     public void DisguiseAnimal(int val)
     {
+        Debug.Log("Change Anim");
         Animator a = animalDisplay.GetComponent<Animator>();
         // TODO: make sure each animal has D animation
         string currentName = a.GetCurrentAnimatorClipInfo(0)[0].clip.name + "D";
