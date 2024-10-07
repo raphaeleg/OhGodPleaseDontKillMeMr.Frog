@@ -6,6 +6,7 @@ using UnityEngine;
 public class Anim_Night_Envelope : MonoBehaviour
 {
     [SerializeField] private Inventory inventory;
+    [SerializeField] private GameObject dayShift;
     void Update()
     {
         
@@ -25,5 +26,13 @@ public class Anim_Night_Envelope : MonoBehaviour
         gameObject.transform.GetChild(0).GetComponent<CanvasGroup>().DOFade(0, 1);
         yield return new WaitForSeconds(1f);
         transform.GetComponent<CanvasGroup>().DOFade(0, 1);
+        //yield return new WaitForSeconds(0.5f);
+        dayShift.SetActive(true);
+        dayShift.GetComponent<Animator>().Play("DayToNight");
+        yield return new WaitForSeconds(2f);
+        //dayShift.GetComponent<Animator>().StopPlayback();
+        dayShift.GetComponent<CanvasGroup>().DOFade(0, 2);
+        yield return new WaitForSeconds(2f);
+        dayShift.SetActive(false);
     }
 }
