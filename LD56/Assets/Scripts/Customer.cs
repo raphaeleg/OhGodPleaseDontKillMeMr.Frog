@@ -76,11 +76,11 @@ public class Customer : MonoBehaviour
         dialogueBox.SetActive(true);
         if (animalID > 3)
         {
-            dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(inventory.GetName(animalID));
+            PlayDialogueAnim(inventory.GetName(animalID));
         }
         else
         {
-            dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play("Envelope");
+            PlayDialogueAnim("Envelope");
         }
     }
     private void CharacterEnter()
@@ -88,22 +88,34 @@ public class Customer : MonoBehaviour
         transform.DOMoveX(1920 / 2, ENTER_DURATION);
         //Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
-
     private void React(int id)
+    {
+        StartCoroutine(React(id == animalID));
+    }
+    private IEnumerator React(bool isCorrect)
     {
         // TODO: Visually show results
 
-        if (id == animalID)
+        if (isCorrect)
         {
             EventManager.TriggerEvent("AddMoney", CORRECT_MONEY);
+            PlayDialogueAnim("Emote_Correct");
         } else
         {
             EventManager.TriggerEvent("AddSuspicion", INCORRECT_SUS);
+            PlayDialogueAnim("Emote_Incorrect");
         }
+        yield return new WaitForSeconds(ENTER_DURATION);
 
         dialogueBox.SetActive(false);
 
+
         transform.DOMoveX(-1920/2, ENTER_DURATION);
         //Lily.DORotate(new Vector3(0, 0, 7), cyclelength * 0.35f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+    }
+
+    private void PlayDialogueAnim(string val)
+    {
+        dialogueBox.transform.GetChild(0).GetComponent<Animator>().Play(val);
     }
 }

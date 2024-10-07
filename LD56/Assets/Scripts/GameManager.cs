@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private const int MAX_SUSPICION = 100;
     [SerializeField] private int suspicion = 0;
 
-    [SerializeField] private int money = 50;
+    [SerializeField] private int money = 0;
 
     #region EventManager
     public static GameManager Instance;    // Singleton
@@ -97,12 +97,12 @@ public class GameManager : MonoBehaviour
         }
     }
     private void SubtractSuspicion(int val) {
-        suspicion -= 10; 
+        suspicion -= 10;
         EventManager.TriggerEvent("UpdateTextSus", suspicion);
-    }    // only way to subtract is by selling normal animals
+    }
     private void AddMoney(int val) {
-        EventManager.TriggerEvent("UpdateTextMoney", money);
         money += val; 
+        EventManager.TriggerEvent("UpdateTextMoney", money);
     }
     private void SubtractMoney(int val) { 
         money -= val;

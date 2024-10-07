@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -93,13 +94,12 @@ public class DayManager : MonoBehaviour
 
     private void ServeCustomer(int id)
     {
-        StartCoroutine("CustomerWait", id);
+        CustomerWait(id);
         StartCoroutine("PlaceAnimal", id);
     }
 
-    private IEnumerator CustomerWait(int id)
+    private void CustomerWait(int id)
     {
-        yield return new WaitForSeconds(2f);
         EventManager.TriggerEvent("PresentAnimal", id);
 
         StartCoroutine(GameLoop());
@@ -109,8 +109,16 @@ public class DayManager : MonoBehaviour
     {
         animalDisplay.SetActive(true);
         animalDisplay.GetComponent<Animator>().Play(inventory.GetName(id));
-        yield return new WaitForSeconds(2f);
+
+        var v = animalDisplay.transform.localPosition;
+        yield return new WaitForSeconds(ENTER_DURATION);
+
+        animalDisplay.transform.DOMoveX(-1920 / 2, ENTER_DURATION);
+
+        yield return new WaitForSeconds(ENTER_DURATION);
+
         animalDisplay.SetActive(false);
+        animalDisplay.transform.localPosition = v;
     }
 
     private IEnumerator SuspiciousCustomer()

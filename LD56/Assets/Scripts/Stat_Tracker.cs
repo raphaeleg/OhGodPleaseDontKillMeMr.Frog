@@ -66,12 +66,12 @@ public class Stat_Tracker : MonoBehaviour
          currentCycle = nightText;
          day.text = currentCycle + val.ToString();
     }
-    private void UpdateMoney(int val)
+    private void UpdateSus(int val)
     {
         sus.text = "Suspicion: " + val.ToString() + "%";
     }
 
-    private void UpdateSus(int val)
+    private void UpdateMoney(int val)
     {
         money.text = "Money:    $" + val.ToString();
     }
