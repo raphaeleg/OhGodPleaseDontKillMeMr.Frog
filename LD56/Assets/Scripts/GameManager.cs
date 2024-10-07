@@ -68,10 +68,13 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         cycle = DayCycle.NIGHT;
+        suspicion = 0;
+        money = 0;
         inventory.Reset();
+        Debug.Log("Reset: "+inventory.day);
     }
 
     private void AddDay(int val) {

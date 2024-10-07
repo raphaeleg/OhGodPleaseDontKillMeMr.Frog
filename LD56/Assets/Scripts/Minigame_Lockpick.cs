@@ -64,10 +64,12 @@ public class Minigame_Lockpick : MonoBehaviour
         if (guess.Equals(guessWord))
         {
             // Trigger Win on correct guess
+            EventManager.TriggerEvent("MinigameSFX", 1);
             Win();
         }
         else
         {
+            EventManager.TriggerEvent("MinigameSFX", 0);
             for (int i = 0; i < guess.Length; i++)
             {
                 // Check which letters are guessed correctly and remove them from copy string
@@ -129,5 +131,10 @@ public class Minigame_Lockpick : MonoBehaviour
     private void Win()
     {
         EventManager.TriggerEvent("WinMinigame");
+    }
+
+    public void onChange()
+    {
+        EventManager.TriggerEvent("MinigameLockInput");
     }
 }
