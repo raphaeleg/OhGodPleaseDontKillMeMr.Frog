@@ -90,7 +90,7 @@ public class SceneLoader : MonoBehaviour
 
     public static void LoadMinigameDino(int index = 0)
     {
-        // TODO: Wait for game implementation
+        FadeLevel("Minigame_Dino");
     }
 
     public static void LoadEnding()
