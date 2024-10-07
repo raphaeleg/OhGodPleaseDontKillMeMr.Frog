@@ -151,6 +151,11 @@ public class DayManager : MonoBehaviour
         animalDisplay.SetActive(false);
         animalDisplay.transform.localPosition = v;
 
+        if (id < 4)
+        {
+            inventory.currentAnimals.Remove(inventory.currentAnimals.Find(item => item.id == id));
+        }
+
         StartCoroutine(GameLoop());
     }
 
