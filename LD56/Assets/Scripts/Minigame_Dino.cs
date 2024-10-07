@@ -23,6 +23,8 @@ public class Minigame_Dino : MonoBehaviour
 
     public void Start() {
         EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.MINIGAME);
+        //player.GetComponent<Transform>
+
         playerRb = player.GetComponent<Rigidbody2D>();
         StartCoroutine("SpawnObstacle");
         StartCoroutine("UpdateTimer");
@@ -49,7 +51,7 @@ public class Minigame_Dino : MonoBehaviour
 
                 // Check if obstacle is touching player
                 foreach (Transform collider in child) {
-                    if (collider.GetComponent<BoxCollider2D>().IsTouching(player.GetComponent<BoxCollider2D>())) {
+                    if (collider.GetComponent<CapsuleCollider2D>().IsTouching(player.GetComponent<BoxCollider2D>())) {
                         LostAttempt();
                         PauseGame();
                     }
@@ -61,7 +63,8 @@ public class Minigame_Dino : MonoBehaviour
     // Spawn obstacles at regular intervals
     private IEnumerator SpawnObstacle() {
         while (true) {
-            GameObject newObstacle = Instantiate(obstaclePrefab, obstacleSpawner.transform.position + new Vector3(0, Random.Range(-200, 200), 0), Quaternion.identity);
+            var transformPos = obstacleSpawner.transform.position + new Vector3(0, Random.Range(-200, 200), 0);
+            GameObject newObstacle = Instantiate(obstaclePrefab, transformPos, Quaternion.identity);
             newObstacle.transform.SetParent(obstacleSpawner.transform);
 
             float currentSpawnRate = Mathf.Lerp(originalSpawnRate, minimumSpawnRate, time / TIMER_SECONDS);
