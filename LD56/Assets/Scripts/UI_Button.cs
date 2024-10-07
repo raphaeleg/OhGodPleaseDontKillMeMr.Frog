@@ -19,6 +19,7 @@ public class UI_Button : MonoBehaviour, IPointerDownHandler
     }
     public void OnPointerDown(PointerEventData eventData)
     {
+        EventManager.TriggerEvent("ButtonClick", 1);
         transform.DOScale(10f, 0.5f);
         transform.DOScale(1f, 0.5f);
     }

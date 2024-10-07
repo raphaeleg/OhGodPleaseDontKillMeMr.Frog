@@ -1,0 +1,315 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &734356119547670215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5487346498729606723}
+  - component: {fileID: 7391593644406555}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5487346498729606723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734356119547670215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3295613286005301982}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7391593644406555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734356119547670215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a14c198eb0338498d8d438ddb6b38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <BG>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <DisguiseAnimal>k__BackingField:
+    Guid:
+      Data1: 332865738
+      Data2: 1185295891
+      Data3: -1913033576
+      Data4: 691184395
+    Path: event:/SFX/Disguised animal SFX/D.Bird
+  <MoralityUp>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MoralityDown>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <CloseShop>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <OpenShop>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <PageFlip>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <PageCrumble>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MinigameCorrect>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MinigameIncorrect>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <Kettle>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MinigameLockBeep>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <Money>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MinigameFail>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <DSnake>k__BackingField:
+    Guid:
+      Data1: 1441384628
+      Data2: 1226960348
+      Data3: -1602898248
+      Data4: -8235093
+    Path: event:/SFX/Disguised animal SFX/D.Cornsnake
+  <DBird>k__BackingField:
+    Guid:
+      Data1: 332865738
+      Data2: 1185295891
+      Data3: -1913033576
+      Data4: 691184395
+    Path: event:/SFX/Disguised animal SFX/D.Bird
+  <DCat>k__BackingField:
+    Guid:
+      Data1: 1955935672
+      Data2: 1298718813
+      Data3: 1419756962
+      Data4: -2069073763
+    Path: event:/SFX/Disguised animal SFX/D.Cat
+  <DFish>k__BackingField:
+    Guid:
+      Data1: 28851535
+      Data2: 1285517922
+      Data3: 1197403810
+      Data4: -742091205
+    Path: event:/SFX/Disguised animal SFX/D.Fish
+  <Cobra>k__BackingField:
+    Guid:
+      Data1: -2021258309
+      Data2: 1122242186
+      Data3: -1032874877
+      Data4: 135175935
+    Path: event:/SFX/Animal SFX/Cobra
+  <Eagle>k__BackingField:
+    Guid:
+      Data1: 840722827
+      Data2: 1147797265
+      Data3: -486284874
+      Data4: 1350650944
+    Path: event:/SFX/Animal SFX/Eagle
+  <Shark>k__BackingField:
+    Guid:
+      Data1: 183329056
+      Data2: 1318985182
+      Data3: 853582517
+      Data4: -1753586441
+    Path: event:/SFX/Animal SFX/Shark
+  <Tiger>k__BackingField:
+    Guid:
+      Data1: -29245839
+      Data2: 1144500359
+      Data3: -819071553
+      Data4: -1804748717
+    Path: event:/SFX/Animal SFX/Tiger
+  <Bird>k__BackingField:
+    Guid:
+      Data1: 1811345218
+      Data2: 1076730248
+      Data3: -1735705697
+      Data4: -1999217650
+    Path: event:/SFX/Animal SFX/Bird
+  <Cat>k__BackingField:
+    Guid:
+      Data1: -1427876136
+      Data2: 1103290483
+      Data3: 1984779914
+      Data4: 252532702
+    Path: event:/SFX/Animal SFX/Cat
+  <Dog>k__BackingField:
+    Guid:
+      Data1: -1500981584
+      Data2: 1264313014
+      Data3: 2067227792
+      Data4: 1214783238
+    Path: event:/SFX/Animal SFX/Dog
+  <Ferret>k__BackingField:
+    Guid:
+      Data1: -1909404042
+      Data2: 1099031091
+      Data3: -1985719110
+      Data4: -1768061481
+    Path: event:/SFX/Animal SFX/Ferret
+  <Fish>k__BackingField:
+    Guid:
+      Data1: -671707130
+      Data2: 1222119579
+      Data3: -119064191
+      Data4: -1303137272
+    Path: event:/SFX/Animal SFX/Fish
+  <Mouse>k__BackingField:
+    Guid:
+      Data1: 1360864429
+      Data2: 1088361909
+      Data3: -1383290207
+      Data4: 336484792
+    Path: event:/SFX/Animal SFX/Mouse
+  <Rabbit>k__BackingField:
+    Guid:
+      Data1: -60223332
+      Data2: 1220715283
+      Data3: 587022469
+      Data4: 1333919474
+    Path: event:/SFX/Animal SFX/Rabbit
+  <Snake>k__BackingField:
+    Guid:
+      Data1: -663438426
+      Data2: 1317336528
+      Data3: -1854665564
+      Data4: 1577830200
+    Path: event:/SFX/Animal SFX/Cornsnake
+  <Turtle>k__BackingField:
+    Guid:
+      Data1: -22554165
+      Data2: 1298412438
+      Data3: 379601578
+      Data4: -2016350348
+    Path: event:/SFX/Animal SFX/Turtle
+  <Hippo>k__BackingField:
+    Guid:
+      Data1: 1650367938
+      Data2: 1102008438
+      Data3: -1876865872
+      Data4: -1246045694
+    Path: event:/SFX/Animal SFX/Hippo
+--- !u!1 &9041150658186340957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3295613286005301982}
+  - component: {fileID: 776199158949095961}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3295613286005301982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041150658186340957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5487346498729606723}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &776199158949095961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041150658186340957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6915346772cd7e478b6dee991dea18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

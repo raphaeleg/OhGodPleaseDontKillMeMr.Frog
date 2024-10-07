@@ -64,6 +64,7 @@ public class DayManager : MonoBehaviour
 
     private void Start()
     {
+        EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.DAY);
         foreach(Animal animal in inventory.currentAnimals)
         {
             var a = Instantiate(animalPrefab, counter);
@@ -92,11 +93,19 @@ public class DayManager : MonoBehaviour
     private IEnumerator GameLoop()
     {
         if (customerTracker >= CUSTOMER_PER_DAY) {
-            CallSusCustomer();
-            int id = inventory.day - 1;
-            inventory.requestAnimal = new Inventory.Request(exoticAnimals[id], 100 + 50 * (id));
-            yield return new WaitForSeconds(DAILYSUS_DURATION);
-            EventManager.TriggerEvent("NextDayCycle");
+            if (inventory.day < 5)
+            {
+                CallSusCustomer();
+                int id = inventory.day - 1;
+                inventory.requestAnimal = new Inventory.Request(exoticAnimals[id], 100 + 50 * (id));
+                yield return new WaitForSeconds(DAILYSUS_DURATION);
+                EventManager.TriggerEvent("NextDayCycle");
+            }
+            else
+            {
+                yield return new WaitForSeconds(DAILYSUS_DURATION);
+                EventManager.TriggerEvent("LoadEnd");
+            }
         } else {
             CallRandomCustomer();
             yield return new WaitForSeconds(ENTER_DURATION);

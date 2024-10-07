@@ -73,6 +73,6 @@ public class Stat_Tracker : MonoBehaviour
 
     private void UpdateMoney(int val)
     {
-        money.text = "Money:    $" + val.ToString();
+        money.text = "Money:    $" + val.ToString()+"/400";
     }
 }

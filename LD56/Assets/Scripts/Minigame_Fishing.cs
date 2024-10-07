@@ -56,6 +56,7 @@ public class Minigame_Fishing : MonoBehaviour
 
     private void Start()
     {
+        EventManager.TriggerEvent("ChangeMusic", (int)Audio_MusicArea.MINIGAME_FISHING);
         animalSprite.Play(inventory.requestAnimal.animal.GetSpeciesName());
         Restart();
     }
