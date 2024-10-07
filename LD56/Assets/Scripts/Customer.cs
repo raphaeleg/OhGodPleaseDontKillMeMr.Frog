@@ -12,19 +12,30 @@ public class Customer : MonoBehaviour
     private int animalID = 0;
     [SerializeField] private Inventory inventory;
 
-    private const float ENTER_DURATION = 1.0f;
+    private const float ENTER_DURATION = 1.5f;
     [SerializeField] private GameObject characterSprite;
     [SerializeField] private float cyclelength = 2;
     [SerializeField] private GameObject dialogueBox;
 
     [SerializeField] private List<string> CharacterAnimNames = new();
     private const string SuspiciousAnimName = "Suspicious";
+    private bool isSus = false;
+
+    private Dictionary<int, int> disguiseMappings;
 
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
     {
+        disguiseMappings = new()
+        {
+            {0, 11},    // cobra, snake
+            {1, 4 },    // eagle, bird
+            {2, 8},     // shark, fish
+            {3, 5},     // tiger, cat
+        };
+
         SubscribedEvents = new() {
             { "RandomCustomer", Generate },
             { "SpecialCustomer", GenerateSpecial },
@@ -56,31 +67,33 @@ public class Customer : MonoBehaviour
 
     private void Generate(int val = 0)
     {
+        if (isSus) { isSus = false; }
         string randChar = CharacterAnimNames[UnityEngine.Random.Range(0, CharacterAnimNames.Count)];
         characterSprite.GetComponent<Animator>().Play(randChar);
         animalID = UnityEngine.Random.Range(inventory.EXOTIC_COUNT, inventory.NORMAL_COUNT + inventory.EXOTIC_COUNT);
-        StartCoroutine(CharacterAnimation());
+        StartCoroutine(CharacterAnimation(-1));
     }
 
     private void GenerateSpecial(int val)
     {
+        isSus = true;
         animalID = inventory.day-1;
         characterSprite.GetComponent<Animator>().Play(SuspiciousAnimName);
-        StartCoroutine(CharacterAnimation());
+        StartCoroutine(CharacterAnimation(val));
     }
 
-    private IEnumerator CharacterAnimation()
+    private IEnumerator CharacterAnimation(int opt)
     {
         CharacterEnter();
         yield return new WaitForSeconds(ENTER_DURATION);
         dialogueBox.SetActive(true);
-        if (animalID > 3)
+        if (opt == 1)
         {
-            PlayDialogueAnim(inventory.GetName(animalID));
+            PlayDialogueAnim("Envelope"); 
         }
         else
         {
-            PlayDialogueAnim("Envelope");
+            PlayDialogueAnim(inventory.GetName(animalID));
         }
     }
     private void CharacterEnter()
@@ -90,11 +103,24 @@ public class Customer : MonoBehaviour
     }
     private void React(int id)
     {
-        StartCoroutine(React(id == animalID));
+        bool isCorrect = id == animalID;
+        if (isSus && id > 3) {
+            // Bluffed
+            EventManager.TriggerEvent("ChoseBluff");
+            // Visuals
+            isCorrect = id == disguiseMappings[animalID];
+        }
+        StartCoroutine(React(isCorrect));
     }
     private IEnumerator React(bool isCorrect)
     {
-        // TODO: Visually show results
+        float duration = ENTER_DURATION;
+        if (isSus)
+        {
+            //duration /= 2;
+            PlayDialogueAnim("Emote_Hesitate");
+            yield return new WaitForSeconds(duration);
+        }
 
         if (isCorrect)
         {
@@ -105,7 +131,7 @@ public class Customer : MonoBehaviour
             EventManager.TriggerEvent("AddSuspicion", INCORRECT_SUS);
             PlayDialogueAnim("Emote_Incorrect");
         }
-        yield return new WaitForSeconds(ENTER_DURATION);
+        yield return new WaitForSeconds(duration);
 
         dialogueBox.SetActive(false);
 
