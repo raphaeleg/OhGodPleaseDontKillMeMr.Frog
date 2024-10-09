@@ -1,6 +1,6 @@
 # <img width="64" alt="Icon" src="https://raw.githubusercontent.com/raphaeleg/OhGodPleaseDontKillMeMr.Frog/refs/heads/main/LD56/Assets/Textures/Animals/Dog/01.png?token=GHSAT0AAAAAACVWFBMYMQSSDZLOPZIEMZQQZYE4ZRQ"> Oh God Please Don't Kill Me Mr. Frog - Source Code
 
-## 🎮 Play the [Windows Executable](https://files.jam.host/uploads/$399642/Windows.zip) or [Online](https://raphaeleg.itch.io/oh-god-please-dont-kill-me-mr-frog)!
+## 🎮 Play the [Windows Executable](https://github.com/raphaeleg/OhGodPleaseDontKillMeMr.Frog/releases/tag/v1.0.0) or [Online](https://raphaeleg.itch.io/oh-god-please-dont-kill-me-mr-frog)!
 
 <img width="400" alt="Introduction" src="https://img.itch.zone/aW1nLzE4MDg1OTkwLnBuZw==/original/uFmDso.png">
 
